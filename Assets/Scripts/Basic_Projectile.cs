@@ -12,6 +12,7 @@ public class Basic_Projectile : MonoBehaviour
     [SerializeField] int damage;
     private void OnTriggerEnter(Collider other)
     {
+     
         if (other.isTrigger) return;
 
         //if (other.gameObject.layer == 0)
@@ -21,7 +22,7 @@ public class Basic_Projectile : MonoBehaviour
 
         IDamage damagable = other.GetComponent<IDamage>();
 
-        if (damagable != null || CompareTag("Player"))
+        if (damagable != null)
         {
             damagable.takeDamage(damage);
         }

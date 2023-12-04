@@ -1,0 +1,3000 @@
+fileFormatVersion: 2
+guid: 4237451f77eea014e97aa97b9569433f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: just Caco explode All Colors_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdac1cf7fd44d5941977806ebec608f0
+      internalID: -1964436798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1219692822a01439379dda9c94b23d
+      internalID: 782550426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1cfd76ce8053848ad115a0dfeb11de
+      internalID: -1100543417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_3
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b3620ad930f7f14a9803340f6499784
+      internalID: 1127400447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b324a13e60cc1054c8c2acc4e9837330
+      internalID: -1940774133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_5
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ba81c179da2f441b3d492e40638ada
+      internalID: 886923265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_6
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce7731994acb5d4e9617d8398cb56a9
+      internalID: 912021960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_7
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bfc18110ebb8be4f92080a3bd088e20
+      internalID: 1278408619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_8
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9b421965b75f64a8cb2b4af9e9caf6
+      internalID: 1699253861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_9
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df1df3e9b2b5e347aa052fdb781e4f8
+      internalID: 1800088555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_10
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f31026e42bbf784882bb722bd3513ab
+      internalID: -1583345894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_11
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a22b99b60c62f3a4a83b6396758c6d94
+      internalID: -608767897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_12
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 181
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bbaa261ce2525b4db41ca683c638f37
+      internalID: -286122535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 161
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01c69b5f6af78f34a9d8ced29c3378b1
+      internalID: -392621859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_14
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 161
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f80f768a1e3195479207a34f2dbce62
+      internalID: 695026578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_15
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 161
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383419c0476ec5b4795c7be44d7bee97
+      internalID: -622917260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_16
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 161
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e262443fdaed248ab88c8b8232383e
+      internalID: -1034627190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_17
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 161
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de447c6577b04147be7ee286cb91aef
+      internalID: -244498879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_18
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 161
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a42ed2f919c54d4da9a460b52978d9d
+      internalID: 1494501525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_19
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 161
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e9ca548260764409dec194d60d05ee
+      internalID: 843567423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_20
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 161
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57188094107bdc54c95f17f67714eeba
+      internalID: 2017260107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 161
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20684e4fd6f248449b0d8cf94bdab70b
+      internalID: -1428558274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_22
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 161
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75de797caaeec3b4ba9f3ff7c769e6f3
+      internalID: 1264234578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_23
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 161
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a6af8d99cb226458611f4d21660626
+      internalID: 373874241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_24
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 161
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53411d899ab6a8b4791222d7d3281a50
+      internalID: -460149794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_25
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 161
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea3c8814dbefc6488ee9d38af9e6b13
+      internalID: 1022881490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 141
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f4cda3aa7661ed4fb81da85fed0ccd9
+      internalID: -1591311478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_27
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 141
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169d96e3e57be53408d84bf372dcf6f2
+      internalID: 43283724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_28
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 141
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c514292f3974a2348bc9cbf5f4ec15d4
+      internalID: -1258528704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_29
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 141
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c39155bf77d32fc4da8d5b1c897aa2ae
+      internalID: 1422112626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_30
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 141
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9f66edbf672e52428e1c18ed7b75891
+      internalID: -132391881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_31
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 141
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e3c31a42461b6448af4d0250b692fd3
+      internalID: -1738699905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_32
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 141
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f97080de25b1a746a7ad2eaa3b7f926
+      internalID: -1158886751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_33
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 141
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc84d77d6ee2e0144802ccb395adb844
+      internalID: -989150460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_34
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 141
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f3fa349678b6444bb72ea9606b7952b
+      internalID: -743369731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_35
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 141
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f8cee921186ba49a3be3e9a8f3737e
+      internalID: 1674030953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_36
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 141
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8b5a0c0b581a548bd9da10f9a34940
+      internalID: 2042396104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_37
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 141
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c859c9c249322b4faf7716dd0ed3708
+      internalID: 348576934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_38
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 141
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8cc7ea47f542df47acdc69cb8495209
+      internalID: 423415852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 121
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f80bba6e1ed3f4aa42137ef7d37439
+      internalID: 442466304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_40
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 121
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b58513832ef9f499b7525e310f5cee
+      internalID: -1295847231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_41
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 121
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc11a9a49f90bd41ad43eaec58ad5a9
+      internalID: -554339958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_42
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 121
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c8dd49fc5fbbd4bb1049879bb49d0c
+      internalID: 1364441853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_43
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 121
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd7d42a820c4c543b25e1a0baede8eb
+      internalID: 1993188926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_44
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 121
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c174102f2516c0448adb3d8a0687cb9d
+      internalID: -1851821482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_45
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 121
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb87779117808ba41be16cab114df2ed
+      internalID: -1119491970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_46
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 121
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e562ff9f22eb445b82f52f59a611b3
+      internalID: 475260191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_47
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 121
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4464635b5341d6438fa76e54a24f9af
+      internalID: 698342655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_48
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 121
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca6daeb9176ae347ab733c7f757379c
+      internalID: -287505135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_49
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 121
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4ad4d14a51f3764f8995c42e5fe96b3
+      internalID: 1129338840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_50
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 121
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc895348a6fc604eb40e0251cdb5b00
+      internalID: 629646882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_51
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 121
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70dcac5049fc7054db6784e006f37d04
+      internalID: -1227182266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 101
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b325c3b56ac57e1409dac0616b06346f
+      internalID: -515614681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_53
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 101
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6904359473d964d4d9c3a1ddf9f7b702
+      internalID: -1174725001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_54
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 101
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 798606b8aef7c91499d56e9e3c8acdaa
+      internalID: -1096002297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_55
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 101
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dba65376a3898a840813dc2f67e766b0
+      internalID: 1086075629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_56
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 101
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c465c57658eb33849a68458a1db3b4d4
+      internalID: -704143251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_57
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 101
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fbf1ee6c08d16b49b60673b470e81ef
+      internalID: -1230508268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_58
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 101
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5522740b2056040b86e3b591032671
+      internalID: 1192349031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_59
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 101
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc8ba8e11ea8a942ac61497488afd1f
+      internalID: 756628455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_60
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 101
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41a508d0a84676439ee2c15beee79ef
+      internalID: 187822850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_61
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 101
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7c5eba4d3ce0741a4cd36413ab804d
+      internalID: 984408542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_62
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 101
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1dfaf0d217641f4d974a7c57e493295
+      internalID: -1362826237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_63
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 101
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b7e4fe8c41d274cbec95fedb1fffd1
+      internalID: -514463745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_64
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 101
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7243b94e611dca64f9394db428108b30
+      internalID: 1316362268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 81
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef082edeb5bd6b44a1b03af2452a39a
+      internalID: 241480234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_66
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 81
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749945bacae2f8643905c42b6be88311
+      internalID: -1556679986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_67
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 81
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26060227103c65449a6e569d3c91057c
+      internalID: -193105315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_68
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 81
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c22833f53cb83748864102b3213a85b
+      internalID: -1873605351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_69
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 81
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af94d117f4fcb44ab69fd70d2c62bd6
+      internalID: 1621492517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_70
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 81
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e7085d110ecb44094c2111a42995e2
+      internalID: -513793954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_71
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 81
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fa30f59c9ced6e4589af04152d0b7fa
+      internalID: -640418131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_72
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 81
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8389d5bab14ade40b88aa57ec7ccc3e
+      internalID: 1947157077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_73
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 81
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f4a2986a1ae2bc418fb78d0b602b2e9
+      internalID: -1464269533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_74
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 81
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832fa28e969ff764996aab335a476b7b
+      internalID: 562866737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_75
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 81
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d6babe935bdb54a9f0238e8df8940f
+      internalID: -97208165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_76
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 81
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 365d085fbb26bd149b54ade2f53cdcce
+      internalID: -332473362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_77
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 81
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe40c512445cf7e4a9d61506e8856f2f
+      internalID: -1640750813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 61
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac4d60c9197ab84da6c0e72ca8de6d4
+      internalID: -1340630309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_79
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 61
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8176aade79547cf4f90588f25a0f6986
+      internalID: -1173268887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_80
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 61
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c884a6a8b7a4d634c8c901f560a5dae5
+      internalID: 191939917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_81
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 61
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ef3d0fa8fa9d948bf94a6ac1f6bbda
+      internalID: 699260628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_82
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 61
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b516ae48dbc1b3f498361950ac79b88a
+      internalID: 192462941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_83
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 61
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ce9a5bbd506794fbff501955671f45
+      internalID: 845419893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_84
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 61
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf7888fb88082c4e9bf763d4fed10b7
+      internalID: 1207000917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_85
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 61
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0421e207dc42f004da62f792566fa0b3
+      internalID: 1651608913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_86
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 61
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d81172eb818a2864eba4b39a96f8cdd7
+      internalID: 1089429006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_87
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 61
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ecd8568ae728b40a51e8682cffc535
+      internalID: 1217580967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_88
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 61
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 270ef4308abac784a9f9817dde504467
+      internalID: 730827789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_89
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 61
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71c786238a3640c44ba66fc0b3646444
+      internalID: 737614156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_90
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 61
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaded0eaaa9fb0442aeadddf5bbb0666
+      internalID: 1546084771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_91
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 41
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c9021e6c7c94c4f946805bf005d973
+      internalID: 789727976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_92
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 41
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33564cb14140f3b4697099092549aec1
+      internalID: 1925905071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_93
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 41
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452bfbe131d023d45adb78eb8e65cbdc
+      internalID: -1856923618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_94
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 41
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eafd298734bbaa49a87bae63bb7fc0d
+      internalID: -453657741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_95
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 41
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75277521a2f035848a848d4befd35496
+      internalID: 228400351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_96
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 41
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc63adbce5f5a1d4c8eb828c3c2bdb34
+      internalID: -617644942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_97
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 41
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4fd5107e769c4243ae3b9eb8d1abc61
+      internalID: 1409499549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_98
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 41
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11d9cab6d0f51e41a6aa6143c89eec5
+      internalID: 1441207796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_99
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 41
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9689339dd146a324181d2885406dd03b
+      internalID: -1170048751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_100
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 41
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4125696686b1b4c83b7613e32e3865
+      internalID: -88885900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_101
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 41
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba8d284b2cf1f1949bfe9b54f68bad55
+      internalID: 582427679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_102
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 41
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40e52450c7234543ab8dc51cbe7152e
+      internalID: 1541290332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_103
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 41
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0434c2d91c65c41847345922790c33
+      internalID: -2022049195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 21
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88bd5b65f7849f34f80050e818384332
+      internalID: 959382229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_105
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 21
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e18a4fffaa69f149a6eb2ed174f4fc7
+      internalID: -1460333658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_106
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 21
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae515b1f806405469bc3c1b8d67f991
+      internalID: -1538909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_107
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 21
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb901af1c72bd5940b97d8a3857215b3
+      internalID: -9796529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_108
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 21
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045e9a2a0ba80e64385363771eec5586
+      internalID: -1761352074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_109
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 21
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b014ed113067b91458f6ad77051a030e
+      internalID: -2094287211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_110
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 21
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b502be7af87f244e9fefaab60598fe3
+      internalID: 982276434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_111
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 21
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a4fd0a44754d34893e3d1e12155bfa
+      internalID: -1452452823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_112
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 21
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611e1f3ca21e67541b4a4f1e8a59c239
+      internalID: 1188917049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_113
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 21
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea70e5d5eaff67b428a7dc34f1c6fc98
+      internalID: 1964273101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_114
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 21
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba269a23dd8bea43a85f4e3223c39f2
+      internalID: 1344701403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_115
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 21
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a75b61f6f7d9f4592fc81d1c5e2f4d
+      internalID: 1328078007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_116
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 21
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb59f6210561e1041b03eea7d47490ec
+      internalID: 885668839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_117
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8cf237985079fa458cf46dc0447f272
+      internalID: -1849190601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_118
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ddc1469d7edad8439e083ac1a9a9475
+      internalID: -1632080978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_119
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e9130cbf70a62c4989857221bd16a0b
+      internalID: 447330156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_120
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214d470ce609f2e42b0a6c40cb5fb6ea
+      internalID: 1299012082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_121
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f43e222a3214664daa204869034931d
+      internalID: -900123367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_122
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd0628b0b7fda4b49a2a2a4708f21936
+      internalID: -777781735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_123
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd3ab910301e6e9498c41d7538ca8cbf
+      internalID: 304619846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_124
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 1
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a6370fc72f9d845936e792564e8b64
+      internalID: 224189802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_125
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2e0a880cb5559479657eee787c17da
+      internalID: -1257110595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_126
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aec6d9fcc5872242b19ca48a586d23f
+      internalID: -537884244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_127
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf06ae9e0ec8e93448a3c6f0ad282800
+      internalID: 1313376305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_128
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 1
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f19588f1c41ccb142aa363d2412aa749
+      internalID: -969409367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just Caco explode All Colors_129
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00cc7e654bd7f146888bbbc2c8e2b0f
+      internalID: -1137638561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      just Caco explode All Colors_0: -1964436798
+      just Caco explode All Colors_1: 782550426
+      just Caco explode All Colors_10: -1583345894
+      just Caco explode All Colors_100: -88885900
+      just Caco explode All Colors_101: 582427679
+      just Caco explode All Colors_102: 1541290332
+      just Caco explode All Colors_103: -2022049195
+      just Caco explode All Colors_104: 959382229
+      just Caco explode All Colors_105: -1460333658
+      just Caco explode All Colors_106: -1538909
+      just Caco explode All Colors_107: -9796529
+      just Caco explode All Colors_108: -1761352074
+      just Caco explode All Colors_109: -2094287211
+      just Caco explode All Colors_11: -608767897
+      just Caco explode All Colors_110: 982276434
+      just Caco explode All Colors_111: -1452452823
+      just Caco explode All Colors_112: 1188917049
+      just Caco explode All Colors_113: 1964273101
+      just Caco explode All Colors_114: 1344701403
+      just Caco explode All Colors_115: 1328078007
+      just Caco explode All Colors_116: 885668839
+      just Caco explode All Colors_117: -1849190601
+      just Caco explode All Colors_118: -1632080978
+      just Caco explode All Colors_119: 447330156
+      just Caco explode All Colors_12: -286122535
+      just Caco explode All Colors_120: 1299012082
+      just Caco explode All Colors_121: -900123367
+      just Caco explode All Colors_122: -777781735
+      just Caco explode All Colors_123: 304619846
+      just Caco explode All Colors_124: 224189802
+      just Caco explode All Colors_125: -1257110595
+      just Caco explode All Colors_126: -537884244
+      just Caco explode All Colors_127: 1313376305
+      just Caco explode All Colors_128: -969409367
+      just Caco explode All Colors_129: -1137638561
+      just Caco explode All Colors_13: -392621859
+      just Caco explode All Colors_14: 695026578
+      just Caco explode All Colors_15: -622917260
+      just Caco explode All Colors_16: -1034627190
+      just Caco explode All Colors_17: -244498879
+      just Caco explode All Colors_18: 1494501525
+      just Caco explode All Colors_19: 843567423
+      just Caco explode All Colors_2: -1100543417
+      just Caco explode All Colors_20: 2017260107
+      just Caco explode All Colors_21: -1428558274
+      just Caco explode All Colors_22: 1264234578
+      just Caco explode All Colors_23: 373874241
+      just Caco explode All Colors_24: -460149794
+      just Caco explode All Colors_25: 1022881490
+      just Caco explode All Colors_26: -1591311478
+      just Caco explode All Colors_27: 43283724
+      just Caco explode All Colors_28: -1258528704
+      just Caco explode All Colors_29: 1422112626
+      just Caco explode All Colors_3: 1127400447
+      just Caco explode All Colors_30: -132391881
+      just Caco explode All Colors_31: -1738699905
+      just Caco explode All Colors_32: -1158886751
+      just Caco explode All Colors_33: -989150460
+      just Caco explode All Colors_34: -743369731
+      just Caco explode All Colors_35: 1674030953
+      just Caco explode All Colors_36: 2042396104
+      just Caco explode All Colors_37: 348576934
+      just Caco explode All Colors_38: 423415852
+      just Caco explode All Colors_39: 442466304
+      just Caco explode All Colors_4: -1940774133
+      just Caco explode All Colors_40: -1295847231
+      just Caco explode All Colors_41: -554339958
+      just Caco explode All Colors_42: 1364441853
+      just Caco explode All Colors_43: 1993188926
+      just Caco explode All Colors_44: -1851821482
+      just Caco explode All Colors_45: -1119491970
+      just Caco explode All Colors_46: 475260191
+      just Caco explode All Colors_47: 698342655
+      just Caco explode All Colors_48: -287505135
+      just Caco explode All Colors_49: 1129338840
+      just Caco explode All Colors_5: 886923265
+      just Caco explode All Colors_50: 629646882
+      just Caco explode All Colors_51: -1227182266
+      just Caco explode All Colors_52: -515614681
+      just Caco explode All Colors_53: -1174725001
+      just Caco explode All Colors_54: -1096002297
+      just Caco explode All Colors_55: 1086075629
+      just Caco explode All Colors_56: -704143251
+      just Caco explode All Colors_57: -1230508268
+      just Caco explode All Colors_58: 1192349031
+      just Caco explode All Colors_59: 756628455
+      just Caco explode All Colors_6: 912021960
+      just Caco explode All Colors_60: 187822850
+      just Caco explode All Colors_61: 984408542
+      just Caco explode All Colors_62: -1362826237
+      just Caco explode All Colors_63: -514463745
+      just Caco explode All Colors_64: 1316362268
+      just Caco explode All Colors_65: 241480234
+      just Caco explode All Colors_66: -1556679986
+      just Caco explode All Colors_67: -193105315
+      just Caco explode All Colors_68: -1873605351
+      just Caco explode All Colors_69: 1621492517
+      just Caco explode All Colors_7: 1278408619
+      just Caco explode All Colors_70: -513793954
+      just Caco explode All Colors_71: -640418131
+      just Caco explode All Colors_72: 1947157077
+      just Caco explode All Colors_73: -1464269533
+      just Caco explode All Colors_74: 562866737
+      just Caco explode All Colors_75: -97208165
+      just Caco explode All Colors_76: -332473362
+      just Caco explode All Colors_77: -1640750813
+      just Caco explode All Colors_78: -1340630309
+      just Caco explode All Colors_79: -1173268887
+      just Caco explode All Colors_8: 1699253861
+      just Caco explode All Colors_80: 191939917
+      just Caco explode All Colors_81: 699260628
+      just Caco explode All Colors_82: 192462941
+      just Caco explode All Colors_83: 845419893
+      just Caco explode All Colors_84: 1207000917
+      just Caco explode All Colors_85: 1651608913
+      just Caco explode All Colors_86: 1089429006
+      just Caco explode All Colors_87: 1217580967
+      just Caco explode All Colors_88: 730827789
+      just Caco explode All Colors_89: 737614156
+      just Caco explode All Colors_9: 1800088555
+      just Caco explode All Colors_90: 1546084771
+      just Caco explode All Colors_91: 789727976
+      just Caco explode All Colors_92: 1925905071
+      just Caco explode All Colors_93: -1856923618
+      just Caco explode All Colors_94: -453657741
+      just Caco explode All Colors_95: 228400351
+      just Caco explode All Colors_96: -617644942
+      just Caco explode All Colors_97: 1409499549
+      just Caco explode All Colors_98: 1441207796
+      just Caco explode All Colors_99: -1170048751
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
