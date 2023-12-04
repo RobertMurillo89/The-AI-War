@@ -12,7 +12,9 @@ public class Player_Fighter : MonoBehaviour
     public float projectileSpeed = 10f; // Speed of the projectile
     public Vector2 offset = new Vector2(1f, 1f); // Offset from the character
     public Texture2D cursorTexture; // Reference to your crosshair image
-
+    [SerializeField] AudioSource PlayerSounds;
+    [SerializeField] AudioClip shoot;
+     
 
 
     void Start()
@@ -52,6 +54,7 @@ public class Player_Fighter : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1")) // Change to your preferred input
         {
+            PlayerSounds.PlayOneShot(shoot);
             Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPos.z = 0f; // Ensure it's on the same Z plane as your character
 

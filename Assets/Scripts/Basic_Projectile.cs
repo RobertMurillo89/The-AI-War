@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Basic_Projectile : MonoBehaviour
 {
+    [SerializeField] int damage;
     public float DestroyTime;
     private void Start()
     {
         Destroy(gameObject, DestroyTime);
     }
-    [SerializeField] int damage;
     private void OnTriggerEnter(Collider other)
     {
      
