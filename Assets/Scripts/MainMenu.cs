@@ -12,6 +12,10 @@ public class MainMenu : MonoBehaviour
     public AudioClip[] MainMenuAmbi;
     public AudioClip[] MainMenuSFX;
 
+    private void Start()
+    {
+        PlayMusic(MusicSource, MainMenuMusic);
+    }
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(1);
@@ -20,5 +24,38 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    void PlayMusic(AudioSource source, AudioClip[] clips)
+    {
+        AudioFunctionalities.PlayRandomClip(source, clips);
+    }
+
+    void PlayAmbiance(AudioSource source, AudioClip[] clips)
+    {
+        AudioFunctionalities.PlayRandomClip(source, clips);
+    }
+    public void PlayButtonSound(AudioSource source, AudioClip[] clips)
+    {
+        AudioFunctionalities.PlayRandomClip(source, clips);
+    }
+
+    public void MasterVolume()
+    {
+
+    }
+    public void MusicVolume(float volume)
+    {
+        MusicSource.volume = volume;
+    }
+
+    public void AmbiVolume(float volume)
+    {
+        AmbianceSource.volume = volume;
+    }
+
+    public void SFXVolume(float volume)
+    {
+        SFXSource.volume = volume;
     }
 }
