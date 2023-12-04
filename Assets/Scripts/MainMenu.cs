@@ -8,10 +8,12 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    [Header("----- Audio Components -----")]
     public AudioMixer AudioMixer;
     public AudioSource MusicSource, AmbianceSource, SFXSource;
-    public AudioClip[] MainMenuMusic, MainMenuAmbi;
     public Slider MasterSlider, MusicSlider, AmbiSlider, SFXSlider;
+    public AudioClip[] MainMenuMusic, MainMenuAmbi;
+    
 
     private float masterVolume, musicVolume, ambiVolume, sfxVolume;
     private bool isMasterMuted, isMusicMuted, isAmbiMuted, isSFXMuted;
