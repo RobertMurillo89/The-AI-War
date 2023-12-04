@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class MainMenu : MonoBehaviour
 {
-    public AudioSource MusicSource;
-    public AudioSource AmbianceSource;
-    public AudioSource SFXSource;
-    public AudioClip[] MainMenuMusic;
-    public AudioClip[] MainMenuAmbi;
-    public AudioClip[] MainMenuSFX;
+    public AudioMixer AudioMixer;
+    public AudioSource MusicSource, AmbianceSource, SFXSource;
+    public AudioClip[] MainMenuMusic, MainMenuAmbi;
+    public Slider MasterSlider, MusicSlider, AmbiSlider, SFXSlider, MouseSensitivity;
 
     private void Start()
     {
+
         PlayMusic(MusicSource, MainMenuMusic);
+
     }
     public void PlayGame()
     {
@@ -35,27 +38,55 @@ public class MainMenu : MonoBehaviour
     {
         AudioFunctionalities.PlayRandomClip(source, clips);
     }
-    public void PlayButtonSound(AudioSource source, AudioClip[] clips)
+
+    public void PlayButtonSound(AudioClip clip)
     {
-        AudioFunctionalities.PlayRandomClip(source, clips);
+        SFXSource.clip = clip;
+        SFXSource.Play();
     }
 
-    public void MasterVolume()
+    public void ToggleMaster()
     {
 
     }
-    public void MusicVolume(float volume)
+
+    public void ToggleMusic()
     {
-        MusicSource.volume = volume;
+
     }
 
-    public void AmbiVolume(float volume)
+    public void ToggleAmbi()
     {
-        AmbianceSource.volume = volume;
+
     }
 
-    public void SFXVolume(float volume)
+    public void ToggleSFX()
     {
-        SFXSource.volume = volume;
+
+    }
+    public void MasterVolume(float value)
+    {
+        MasterSlider.value = value;
+        AudioMixer.SetFloat("MasterVolume", Mathf.Log10(value / 100) * 20f); // need chad to explain
+    }
+    public void MusicVolume(float value)
+    {
+        MusicSlider.value = value;
+        AudioMixer.SetFloat("MusicVolume", Mathf.Log10(value / 100) * 20f); // need chad to explain
+
+    }
+
+    public void AmbiVolume(float value)
+    {
+        AmbiSlider.value = value;
+        AudioMixer.SetFloat("AmbianceVolume", Mathf.Log10(value / 100) * 20f); // need chad to explain
+
+    }
+
+    public void SFXVolume(float value)
+    {
+        SFXSlider.value = value;
+        AudioMixer.SetFloat("SFXVolume", Mathf.Log10(value / 100) * 20f); // need chad to explain
+
     }
 }
