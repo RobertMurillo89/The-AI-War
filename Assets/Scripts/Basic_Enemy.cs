@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Basic_Enemy : MonoBehaviour
+public class Basic_Enemy : MonoBehaviour, IDamage
 {
     public float moveSpeed = 5f; // Speed of the enemy movement
     private Transform player; // Reference to the player's transform
+    [SerializeField] int HP;
 
     void Start()
     {
@@ -28,6 +29,18 @@ public class Basic_Enemy : MonoBehaviour
             // Move towards the player
             transform.Translate(direction * moveSpeed * Time.deltaTime);
         }
+    }
+    public void takeDamage(int amount)
+    {
+        HP -= amount;
+        if (HP > 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+        private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("PlayerProjectile")) playerInRange = true;
     }
 }
 
