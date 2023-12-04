@@ -40,7 +40,7 @@ public class Basic_Enemy : MonoBehaviour, IDamage
     }
         private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("PlayerProjectile")) playerInRange = true;
+        //if (other.CompareTag("PlayerProjectile")) //playerInRange = true;
     }
 }
 
