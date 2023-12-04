@@ -14,8 +14,6 @@ public class Player_Fighter : MonoBehaviour
     public Texture2D cursorTexture; // Reference to your crosshair image
     [SerializeField] AudioSource PlayerSounds;
     [SerializeField] AudioClip shoot;
-     
-
 
     void Start()
     {
