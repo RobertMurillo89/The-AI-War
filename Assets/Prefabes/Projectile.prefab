@@ -137,6 +137,7 @@ MonoBehaviour:
   Damage: 0
   Speed: 0
   rb: {fileID: 4322478212454504977}
+  spriteRenderer: {fileID: 3313592917370503012}
 --- !u!50 &4322478212454504977
 Rigidbody2D:
   serializedVersion: 4

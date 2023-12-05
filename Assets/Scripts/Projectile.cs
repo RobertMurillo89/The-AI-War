@@ -8,14 +8,13 @@ public class Projectile : MonoBehaviour
     public int Damage;
     public float Speed;
     public Rigidbody2D rb;
-
-    private SpriteRenderer ProjectileSprite;
+    public SpriteRenderer spriteRenderer;
 
     public void SetProperties(int damage, float speed, Vector3 direction, Sprite skin)
     {
         this.Damage = damage;
         this.Speed = speed;
-        ProjectileSprite.sprite = skin;
+        spriteRenderer.sprite = skin;
         
 
         rb.velocity = direction * speed;
@@ -32,8 +31,8 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    //private void OnBecameInvisible()
-    //{
-    //    Destroy(gameObject);
-    //}
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }
