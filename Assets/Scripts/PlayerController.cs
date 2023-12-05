@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour, IDamage
         //for testing purposes
         if (Input.GetKeyDown(KeyCode.N))
         {
-            TakeDamage(Random.Range(5, 10));
+            takeDamage(Random.Range(5, 10));
         }
         if (Input.GetKeyDown(KeyCode.M))
         {
