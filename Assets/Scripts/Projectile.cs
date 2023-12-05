@@ -8,13 +8,14 @@ public class Projectile : MonoBehaviour
     public int Damage;
     public float Speed;
     public Rigidbody2D rb;
-    public SpriteRenderer spriteRenderer;
+
+    private SpriteRenderer ProjectileSprite;
 
     public void SetProperties(int damage, float speed, Vector3 direction, Sprite skin)
     {
         this.Damage = damage;
         this.Speed = speed;
-        spriteRenderer.sprite = skin;
+        ProjectileSprite.sprite = skin;
         
 
         rb.velocity = direction * speed;
