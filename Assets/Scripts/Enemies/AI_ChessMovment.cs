@@ -19,6 +19,7 @@ public class AI_Chess : EnemyAI
     bool foundOtherWall;
     int ticks;
     int DiceRoll;
+    bool randomBool;
 
     // Update is called once per frame
     // Start is called before the first frame update
@@ -68,6 +69,8 @@ public class AI_Chess : EnemyAI
         {
             VDirection = new Vector3(1, 0, 0).normalized;
             DirectionCheackBox = new Vector2(1, 0);
+            DiceRoll = Random.Range(0, 1);
+            //if (DiceRoll)
         }
         else if (angle >= 22.5f && angle < 67.5f)
         {
