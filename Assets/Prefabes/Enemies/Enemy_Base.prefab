@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77eac7a5d719882468fd4dc31477bd8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  Speed: 4.8
+  Health: 10
   EmoteSource: {fileID: 521228306648080157}
   WeaponSource: {fileID: 1728633595828533398}

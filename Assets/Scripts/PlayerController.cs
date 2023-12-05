@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     [Header("----- Player Stats -----")]
     [SerializeField] float CurrentMovementSpeed;
     public float MoveSpeed; // Speed of the player movement
-    public float ProjectileSpeed; // Speed of the projectile
     [SerializeField] float health;
     public float MaxHealth;
     [SerializeField] float stamina;
@@ -18,8 +17,16 @@ public class PlayerController : MonoBehaviour
     public float SprintSpeedMultiplier;
     public float IdleTimeForStaminaRegen;
 
+    [Header("-----Weapon Stats-----")]
+    public int Damage;
+    public float ProjectileSpeed;
+    public Sprite ProjectileSprite;
+    public Transform projectileSpawnPoint;
+    public Projectile projectilePrefab; // Reference to your projectile prefab
+
+
+
     [Header("----- Components -----")]
-    public GameObject projectilePrefab; // Reference to your projectile prefab
     public Vector2 offset = new Vector2(1f, 1f); // Offset from the character
     public Texture2D cursorTexture; // Reference to your crosshair image
     public float HealthStamBarChipSpeed; // set to 2f
@@ -147,21 +154,24 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1")) // Change to your preferred input
         {
             PlayerSounds.PlayOneShot(shoot);
+
+            // Instantiate the projectile
+            Projectile newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
+
+            // Calculate shooting direction
             Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPos.z = 0f; // Ensure it's on the same Z plane as your character
-
+            Vector3 shootingDirection = (targetPos - transform.position).normalized;
+            // Set the projectile properties
+            newProjectile.SetProperties(Damage, ProjectileSpeed, shootingDirection, ProjectileSprite);
             // Apply offset
             targetPos += new Vector3(offset.x, offset.y, 0f);
 
-            Vector3 shootingDirection = (targetPos - transform.position).normalized;
+            // Optionally rotate the projectile to align with the shooting direction
+            float projectileAngle = Mathf.Atan2(shootingDirection.y, shootingDirection.x) * Mathf.Rad2Deg;
+            newProjectile.transform.rotation = Quaternion.Euler(0, 0, projectileAngle);
 
-            GameObject newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            Rigidbody2D rb = newProjectile.GetComponent<Rigidbody2D>();
 
-            if (rb != null)
-            {
-                rb.velocity = shootingDirection * ProjectileSpeed;
-            }
         }
     }
 

@@ -6,7 +6,8 @@ public class EnemyAI : MonoBehaviour
 {
 
     [Header("--------EnemyStats-------")]
-    public float speed;
+    public float Speed;
+    public int Health;
 
     [Header("-------Components-------")]
     public AudioSource EmoteSource, WeaponSource;
@@ -35,6 +36,15 @@ public class EnemyAI : MonoBehaviour
     void MoveTowardsPlayer()
     {
         // Move towards the player's position
-        transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, Speed * Time.deltaTime);
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        Health -= damageAmount;
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
