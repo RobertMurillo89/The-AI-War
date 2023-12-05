@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1322770470666757955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6387347661207663851}
+  m_Layer: 0
+  m_Name: ShootPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6387347661207663851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322770470666757955}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.99, y: 0.97, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2112067584126571770}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1778758443380465916
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,14 +55,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778758443380465916}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.012129798, w: 0.99992645}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.003798, y: -1.046, z: 0}
   m_LocalScale: {x: 1.3712, y: 1.3712, z: 1.3712}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2112067584126571770}
   m_Father: {fileID: 5591061869437817109}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.39}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2307292977332800950
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +124,7 @@ MonoBehaviour:
   Damage: 10
   ProjectileSpeed: 20
   ProjectileSprite: {fileID: 21300000, guid: 14376c689ff2e81478a267f8b1b3b281, type: 3}
-  projectileSpawnPoint: {fileID: 2112067584126571770}
+  projectileSpawnPoint: {fileID: 6387347661207663851}
   projectilePrefab: {fileID: 6896284679291782774, guid: 9a00fcf3d554f4d48b2a68f8e70695dc, type: 3}
   offset: {x: 1, y: -1}
   cursorTexture: {fileID: 2800000, guid: 27a3ea1e84b2c8246ab1dc2db459c107, type: 3}
@@ -163,7 +194,8 @@ Transform:
   m_LocalPosition: {x: 0.728, y: 0.069, z: 0}
   m_LocalScale: {x: 0.16915, y: 0.16915, z: 0.16915}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6387347661207663851}
   m_Father: {fileID: 3233779688424557045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4824784465556834105

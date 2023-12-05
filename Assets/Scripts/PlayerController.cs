@@ -164,6 +164,7 @@ public class PlayerController : MonoBehaviour
             Vector3 shootingDirection = (targetPos - transform.position).normalized;
             // Set the projectile properties
             newProjectile.SetProperties(Damage, ProjectileSpeed, shootingDirection, ProjectileSprite);
+            newProjectile.SetLayer(7); // 7 is playerprojectile layer. If this is changed this needs to be updated. 
             // Apply offset
             targetPos += new Vector3(offset.x, offset.y, 0f);
 

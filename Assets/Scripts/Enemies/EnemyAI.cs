@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : MonoBehaviour, IDamage
 {
 
     [Header("--------EnemyStats-------")]
@@ -39,9 +39,10 @@ public class EnemyAI : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, Speed * Time.deltaTime);
     }
 
-    public void TakeDamage(int damageAmount)
+
+    public void takeDamage(int amount)
     {
-        Health -= damageAmount;
+        Health -= amount;
         if (Health <= 0)
         {
             Destroy(gameObject);

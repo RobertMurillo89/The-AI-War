@@ -10,25 +10,39 @@ public class Projectile : MonoBehaviour
     public Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
 
+
+
     public void SetProperties(int damage, float speed, Vector3 direction, Sprite skin)
     {
         this.Damage = damage;
         this.Speed = speed;
         spriteRenderer.sprite = skin;
-        
 
         rb.velocity = direction * speed;
     }
 
+    public void SetLayer(int layer)
+    {
+        gameObject.layer = layer;
+    }
+
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        IDamage damageable = hitInfo.GetComponent<IDamage>();
-        if (damageable != null)
+
+
+        if (hitInfo.gameObject.CompareTag("Enemy"))
         {
-            damageable.takeDamage(Damage);
+
+            IDamage damageable = hitInfo.GetComponent<IDamage>();
+            if (damageable != null)
+            {
+                damageable.takeDamage(Damage);
+            }
+
+            Destroy(gameObject);
         }
 
-        Destroy(gameObject);
+
     }
 
     private void OnBecameInvisible()
