@@ -359,6 +359,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 4.8
   Health: 10
+  Range: 0
+  Damage: 0
+  AttackCooldown: 0
   EmoteSource: {fileID: 521228306648080157}
   WeaponSource: {fileID: 1728633595828533398}
 --- !u!58 &3930486485287111600

@@ -293,11 +293,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   Health: 10
-  EmoteSource: {fileID: 0}
-  WeaponSource: {fileID: 0}
   Range: 2
   Damage: 5
   AttackCooldown: 1
+  EmoteSource: {fileID: 0}
+  WeaponSource: {fileID: 0}
 --- !u!1 &8981527005411164216
 GameObject:
   m_ObjectHideFlags: 0

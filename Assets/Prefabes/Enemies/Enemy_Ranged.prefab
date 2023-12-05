@@ -293,7 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   Health: 10
-  Range: 5
+  Range: 50
   Damage: 5
   AttackCooldown: 1
   EmoteSource: {fileID: 7287002122702279038}
@@ -302,7 +302,7 @@ MonoBehaviour:
   ProjectileSpeed: 20
   projectileSpawnPoint: {fileID: 7210407824941064862}
   ProjectileSprite: {fileID: 21300000, guid: 10cf53ac29dce5a49af158b40a4e697b, type: 3}
-  stopDistance: 10
+  stopDistance: 15
 --- !u!1 &9146245211491945412
 GameObject:
   m_ObjectHideFlags: 0
