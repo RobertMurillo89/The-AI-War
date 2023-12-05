@@ -6,16 +6,24 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [Header("----- Player Stats -----")]
-    public float moveSpeed; // Speed of the player movement
-    public float projectileSpeed; // Speed of the projectile
+    [SerializeField] float CurrentMovementSpeed;
+    public float MoveSpeed; // Speed of the player movement
+    public float ProjectileSpeed; // Speed of the projectile
+    [SerializeField] float health;
     public float MaxHealth;
+    [SerializeField] float stamina;
+    public float MaxStamina;
+    public float StaminaDrainRate;
+    public float StaminaRegenRate;
+    public float SprintSpeedMultiplier;
+    public float IdleTimeForStaminaRegen;
 
     [Header("----- Components -----")]
     public GameObject projectilePrefab; // Reference to your projectile prefab
     public Vector2 offset = new Vector2(1f, 1f); // Offset from the character
     public Texture2D cursorTexture; // Reference to your crosshair image
-    public float HealthBarChipSpeed; // set to 2f
-    public Image FrontHealthBar, BackHealthBar;
+    public float HealthStamBarChipSpeed; // set to 2f
+    public Image FrontHealthBar, BackHealthBar, FrontStaminaBar, BackStaminaBar;
     public Rigidbody2D rb2D;
     public Transform WeaponHolder;
     public SpriteRenderer spriteRenderer;
@@ -27,18 +35,21 @@ public class PlayerController : MonoBehaviour
 
 
     private Vector2 moveInput;
-    private float health;
     private float healthLerpTimer;
+    private float stamLerpTimer;
+    private bool isSprinting;
+    private float idleTimer;
 
     void Start()
     {
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
         health = MaxHealth;
+        stamina = MaxStamina;
     }
 
     void Update()
     {
-
+        UpdateHealthUI();
         Movement();
         UseWeapon();
         //for testing purposes
@@ -60,11 +71,24 @@ public class PlayerController : MonoBehaviour
 
         moveInput.Normalize(); // this prevents the vectors from stacking when moving diagonally. 
 
-        //move player
-        rb2D.velocity = moveInput * moveSpeed;
+        // Check if the player is moving to activate sprint
+        if (moveInput != Vector2.zero)
+        {
+            isSprinting = stamina > 0;
+            idleTimer = 0; // Reset idle timer as player is moving
+        }
+        else
+        {
+            isSprinting = false; // Stop sprinting when not moving
+            idleTimer += Time.deltaTime; // Increment idle timer when player is not moving
+        }
 
-        health = Mathf.Clamp(health, 0, MaxHealth); //prevents health from going above or below max and min values
-        UpdateHealthUI();
+        // Modify speed if sprinting
+        float speed = isSprinting ? MoveSpeed * SprintSpeedMultiplier : MoveSpeed;
+        rb2D.velocity = moveInput * speed;
+        CurrentMovementSpeed = speed;
+
+        HandleStamina();
 
         // Flip the sprite based on movement direction
         if (moveInput.y < 0)
@@ -76,6 +100,25 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = false; // Unflip the sprite when moving right
         }
     }
+
+    void HandleStamina()
+    {
+        if (isSprinting)
+        {
+            stamina -= StaminaDrainRate * Time.deltaTime;
+            stamina = Mathf.Clamp(stamina, 0, MaxStamina);
+            stamLerpTimer = 0; // Reset lerp timer for stamina UI chipping
+        }
+        else if ( !isSprinting && idleTimer >= IdleTimeForStaminaRegen)
+        {
+            stamina += StaminaRegenRate * Time.deltaTime;
+            stamina = Mathf.Clamp(stamina, 0, MaxStamina);
+            stamLerpTimer = 0; // Reset lerp timer for stamina UI chipping
+        }
+
+        UpdateStaminaUI();
+    }
+
 
     void UseWeapon()
     {
@@ -117,13 +160,15 @@ public class PlayerController : MonoBehaviour
 
             if (rb != null)
             {
-                rb.velocity = shootingDirection * projectileSpeed;
+                rb.velocity = shootingDirection * ProjectileSpeed;
             }
         }
     }
 
     public void UpdateHealthUI()
     {
+
+        health = Mathf.Clamp(health, 0, MaxHealth); //prevents health from going above or below max and min values
         float fillFront = FrontHealthBar.fillAmount;
         float fillBack = BackHealthBar.fillAmount;
         float healthFraction = health / MaxHealth; // Keeps the value between 0 and 1
@@ -132,7 +177,7 @@ public class PlayerController : MonoBehaviour
             FrontHealthBar.fillAmount = healthFraction;
             BackHealthBar.color = Color.red;
             healthLerpTimer += Time.deltaTime;
-            float percentComplete = healthLerpTimer / HealthBarChipSpeed;
+            float percentComplete = healthLerpTimer / HealthStamBarChipSpeed;
             percentComplete = percentComplete * percentComplete; // starts the animation off slow then speeds up. IDK how. lol.
             BackHealthBar.fillAmount = Mathf.Lerp(fillBack, healthFraction, percentComplete);
         }
@@ -142,9 +187,35 @@ public class PlayerController : MonoBehaviour
             BackHealthBar.color = Color.green;
             BackHealthBar.fillAmount = healthFraction;
             healthLerpTimer += Time.deltaTime;
-            float percentComplete = healthLerpTimer / HealthBarChipSpeed;
+            float percentComplete = healthLerpTimer / HealthStamBarChipSpeed;
             percentComplete = percentComplete * percentComplete; // starts the animation off slow then speeds up. IDK how. lol.
             FrontHealthBar.fillAmount = Mathf.Lerp(fillFront, BackHealthBar.fillAmount, percentComplete);
+        }
+    }
+    public void UpdateStaminaUI()
+    {
+        //stamina = Mathf.Clamp(stamina, 0, MaxStamina); //prevents health from going above or below max and min values
+        float fillFront = FrontStaminaBar.fillAmount;
+        float fillBack = BackStaminaBar.fillAmount;
+        float staminaFraction = stamina / MaxStamina; // Keeps the value between 0 and 1
+
+        if (fillBack > staminaFraction)
+        {
+            FrontStaminaBar.fillAmount = staminaFraction;
+            BackStaminaBar.color = Color.red;
+            stamLerpTimer += Time.deltaTime;
+            float percentComplete = stamLerpTimer / HealthStamBarChipSpeed;
+            percentComplete = percentComplete * percentComplete; // starts the animation off slow then speeds up. IDK how. lol.
+            BackStaminaBar.fillAmount = Mathf.Lerp(fillBack, staminaFraction, percentComplete);
+        }
+
+        if (fillFront < staminaFraction)
+        {
+            // Directly fill up the stamina bar when increasing (no lerp)
+            BackStaminaBar.color = Color.green;
+            BackStaminaBar.fillAmount = staminaFraction;
+            FrontStaminaBar.fillAmount = staminaFraction;
+            stamLerpTimer = 0; // Reset the lerp timer
         }
     }
 
