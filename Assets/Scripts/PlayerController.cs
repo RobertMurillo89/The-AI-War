@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamage
 {
     [Header("----- Player Stats -----")]
     [SerializeField] float CurrentMovementSpeed;
@@ -230,15 +230,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
-        healthLerpTimer = 0f; // this has to do with the special effect on the hud
-    }
-
     public void RestoreHealth(float amount)
     {
         health += amount;
+        healthLerpTimer = 0f; // this has to do with the special effect on the hud
+    }
+
+    public void takeDamage(int amount)
+    {
+        health -= amount;
         healthLerpTimer = 0f; // this has to do with the special effect on the hud
     }
 }
