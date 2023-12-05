@@ -26,10 +26,8 @@ public class Projectile : MonoBehaviour
         gameObject.layer = layer;
     }
 
-    private void OnTriggerEnter2D(Collider2D hitInfo)
+    protected virtual void OnTriggerEnter2D(Collider2D hitInfo)
     {
-
-
         if (hitInfo.gameObject.CompareTag("Enemy"))
         {
 
@@ -41,8 +39,6 @@ public class Projectile : MonoBehaviour
 
             Destroy(gameObject);
         }
-
-
     }
 
     private void OnBecameInvisible()

@@ -9,10 +9,16 @@ public class EnemyAI : MonoBehaviour, IDamage
     public float Speed;
     public int Health;
 
+    [Header("-----Attack-----")]
+    public float Range;
+    public int Damage;
+    public float AttackCooldown;
+    protected float lastAttackTime;
+
     [Header("-------Components-------")]
     public AudioSource EmoteSource, WeaponSource;
 
-    private Transform playerTransform;
+    protected Transform playerTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -25,20 +31,26 @@ public class EnemyAI : MonoBehaviour, IDamage
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (playerTransform != null)
         {
             MoveTowardsPlayer();
+            PerformAction();
         }
     }
 
-    void MoveTowardsPlayer()
+    protected virtual void MoveTowardsPlayer()
     {
         // Move towards the player's position
         transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, Speed * Time.deltaTime);
     }
-
+    
+    protected virtual void PerformAction()
+    {
+        // Default implementation is empty
+        // Subclasses like MeleeEnemy or RangedEnemy will override this
+    }
 
     public void takeDamage(int amount)
     {
