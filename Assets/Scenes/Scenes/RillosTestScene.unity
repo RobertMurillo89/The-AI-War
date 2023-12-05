@@ -557,6 +557,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5524641052269396634, guid: 2b77817a536e30949892a089bf9a36e1, type: 3}
+      propertyPath: FireRate
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524641052269396634, guid: 2b77817a536e30949892a089bf9a36e1, type: 3}
       propertyPath: BackHealthBar
       value: 
       objectReference: {fileID: 1071305427}

@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour, IDamage
 {
     [Header("----- Player Stats -----")]
-    [SerializeField] float CurrentMovementSpeed;
+    [SerializeField] float currentMovementSpeed;
     public float MoveSpeed; // Speed of the player movement
-    [SerializeField] float health;
+    [SerializeField] float currentHealth;
     public float MaxHealth;
-    [SerializeField] float stamina;
+    [SerializeField] float currentStamina;
     public float MaxStamina;
     public float StaminaDrainRate;
     public float StaminaRegenRate;
@@ -18,11 +18,13 @@ public class PlayerController : MonoBehaviour, IDamage
     public float IdleTimeForStaminaRegen;
 
     [Header("-----Weapon Stats-----")]
+    public float FireRate;
     public int Damage;
     public float ProjectileSpeed;
     public Sprite ProjectileSprite;
     public Transform projectileSpawnPoint;
     public Projectile projectilePrefab; // Reference to your projectile prefab
+    private float nextFireTime;
 
 
 
@@ -50,8 +52,8 @@ public class PlayerController : MonoBehaviour, IDamage
     void Start()
     {
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
-        health = MaxHealth;
-        stamina = MaxStamina;
+        currentHealth = MaxHealth;
+        currentStamina = MaxStamina;
     }
 
     void Update()
@@ -81,7 +83,7 @@ public class PlayerController : MonoBehaviour, IDamage
         // Check if the player is moving to activate sprint
         if (moveInput != Vector2.zero)
         {
-            isSprinting = stamina > 0;
+            isSprinting = currentStamina > 0;
             idleTimer = 0; // Reset idle timer as player is moving
         }
         else
@@ -93,7 +95,7 @@ public class PlayerController : MonoBehaviour, IDamage
         // Modify speed if sprinting
         float speed = isSprinting ? MoveSpeed * SprintSpeedMultiplier : MoveSpeed;
         rb2D.velocity = moveInput * speed;
-        CurrentMovementSpeed = speed;
+        currentMovementSpeed = speed;
 
         HandleStamina();
 
@@ -112,14 +114,14 @@ public class PlayerController : MonoBehaviour, IDamage
     {
         if (isSprinting)
         {
-            stamina -= StaminaDrainRate * Time.deltaTime;
-            stamina = Mathf.Clamp(stamina, 0, MaxStamina);
+            currentStamina -= StaminaDrainRate * Time.deltaTime;
+            currentStamina = Mathf.Clamp(currentStamina, 0, MaxStamina);
             stamLerpTimer = 0; // Reset lerp timer for stamina UI chipping
         }
         else if ( !isSprinting && idleTimer >= IdleTimeForStaminaRegen)
         {
-            stamina += StaminaRegenRate * Time.deltaTime;
-            stamina = Mathf.Clamp(stamina, 0, MaxStamina);
+            currentStamina += StaminaRegenRate * Time.deltaTime;
+            currentStamina = Mathf.Clamp(currentStamina, 0, MaxStamina);
             stamLerpTimer = 0; // Reset lerp timer for stamina UI chipping
         }
 
@@ -151,8 +153,9 @@ public class PlayerController : MonoBehaviour, IDamage
         WeaponHolder.rotation = Quaternion.Euler(0, 0, angle);
 
         // Handle firing
-        if (Input.GetButtonDown("Fire1")) // Change to your preferred input
+        if (Input.GetButton("Fire1") && Time.time >= nextFireTime) 
         {
+            nextFireTime = Time.time + 1f / FireRate;
             PlayerSounds.PlayOneShot(shoot);
 
             // Instantiate the projectile
@@ -179,10 +182,10 @@ public class PlayerController : MonoBehaviour, IDamage
     public void UpdateHealthUI()
     {
 
-        health = Mathf.Clamp(health, 0, MaxHealth); //prevents health from going above or below max and min values
+        currentHealth = Mathf.Clamp(currentHealth, 0, MaxHealth); //prevents health from going above or below max and min values
         float fillFront = FrontHealthBar.fillAmount;
         float fillBack = BackHealthBar.fillAmount;
-        float healthFraction = health / MaxHealth; // Keeps the value between 0 and 1
+        float healthFraction = currentHealth / MaxHealth; // Keeps the value between 0 and 1
         if (fillBack > healthFraction)
         {
             FrontHealthBar.fillAmount = healthFraction;
@@ -208,7 +211,7 @@ public class PlayerController : MonoBehaviour, IDamage
         //stamina = Mathf.Clamp(stamina, 0, MaxStamina); //prevents health from going above or below max and min values
         float fillFront = FrontStaminaBar.fillAmount;
         float fillBack = BackStaminaBar.fillAmount;
-        float staminaFraction = stamina / MaxStamina; // Keeps the value between 0 and 1
+        float staminaFraction = currentStamina / MaxStamina; // Keeps the value between 0 and 1
 
         if (fillBack > staminaFraction)
         {
@@ -232,13 +235,13 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public void RestoreHealth(float amount)
     {
-        health += amount;
+        currentHealth += amount;
         healthLerpTimer = 0f; // this has to do with the special effect on the hud
     }
 
     public void takeDamage(int amount)
     {
-        health -= amount;
+        currentHealth -= amount;
         healthLerpTimer = 0f; // this has to do with the special effect on the hud
     }
 }
