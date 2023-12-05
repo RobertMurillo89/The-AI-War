@@ -16,22 +16,23 @@ public class AI_ChessMovment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ticks = moveTicks;
+        //ticks = moveTicks;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-            if (ticks > 0)
-            {
+        if (ticks > 0)
+        {
             transform.Translate(Direction * movement * Time.deltaTime);
-            }
-            else
-            {
-                ticks = movement;
-                Direction = SetDirection();
-            }
+            ticks--;
+        }
+        else
+        {
+            ticks = moveTicks;
+            Direction = SetDirection();
+        }
     }
     Vector3 SetDirection()
     {
