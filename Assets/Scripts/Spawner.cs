@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
     public int[] ItemCounts; // list of interval amounts of items to spawn
 
 
+
     private int currentInterval = 0;
     private int itemsSpawnedInCurrentInterval = 0;
     private GameObject player;
@@ -21,6 +22,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player"); // Finds the player
+        GameManager.Instance.RegisterSpawner(this);
         StartCoroutine(SpawnItems());
     }
 
@@ -38,12 +40,25 @@ public class Spawner : MonoBehaviour
             currentInterval++;
             yield return new WaitForSeconds(WaveDelay);
         }
+        GameManager.Instance.NotifySpawnerCompleted(this);
+    }
+
+    public int GetTotalWaves()
+    {
+        return ItemCounts.Length; // Return the total number of waves for this spawner
     }
 
     void SpawnItem()
     {
         Vector3 spawnPosition = GetSpawnPosition();
-        Instantiate(ObjectToSpawn, spawnPosition, Quaternion.identity);
+        GameObject spawnedObject = Instantiate(ObjectToSpawn, spawnPosition, Quaternion.identity);
+        // Check if the spawned object is an enemy
+        IEnemy enemyComponent = spawnedObject.GetComponent<IEnemy>();
+        if (enemyComponent != null)
+        {
+            enemyComponent.OnEnemySpawned();
+        }
+
     }
 
     Vector3 GetSpawnPosition()

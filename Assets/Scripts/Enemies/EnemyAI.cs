@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour, IDamage
+public class EnemyAI : MonoBehaviour, IDamage, IEnemy
 {
 
     [Header("--------EnemyStats-------")]
@@ -58,6 +58,13 @@ public class EnemyAI : MonoBehaviour, IDamage
         if (Health <= 0)
         {
             Destroy(gameObject);
+            GameManager.Instance.DecrementEnemyCount();
+
         }
+    }
+
+    public void OnEnemySpawned()
+    {
+        GameManager.Instance.IncrementEnemyCount();
     }
 }

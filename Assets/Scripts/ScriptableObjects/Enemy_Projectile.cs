@@ -28,16 +28,12 @@ public class Enemy_Projectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hit Player");
+            
             IDamage damageable = collision.gameObject.GetComponent<IDamage>();
             if (damageable != null)
             {
-                Debug.Log("Applying Damage");
+                
                 damageable.takeDamage(Damage);
-            }
-            else
-            {
-                Debug.Log("IDamage component not found on Player");
             }
 
             // Optionally add an impact effect or sound here
@@ -45,10 +41,7 @@ public class Enemy_Projectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void Update()
-    {
-        Debug.Log(transform.position);
-    }
+
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
