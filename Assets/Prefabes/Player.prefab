@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 6802266017078519815}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +82,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentMovementSpeed: 0
   MoveSpeed: 5
-  ProjectileSpeed: 20
   health: 0
   MaxHealth: 100
   stamina: 0
@@ -91,7 +90,11 @@ MonoBehaviour:
   StaminaRegenRate: 10
   SprintSpeedMultiplier: 1.3
   IdleTimeForStaminaRegen: 1.3
-  projectilePrefab: {fileID: 5737183061041399635, guid: 701351610b9de734b9e8f173d168e9c4, type: 3}
+  Damage: 10
+  ProjectileSpeed: 20
+  ProjectileSprite: {fileID: 21300000, guid: 14376c689ff2e81478a267f8b1b3b281, type: 3}
+  projectileSpawnPoint: {fileID: 2112067584126571770}
+  projectilePrefab: {fileID: 6896284679291782774, guid: 9a00fcf3d554f4d48b2a68f8e70695dc, type: 3}
   offset: {x: 1, y: -1}
   cursorTexture: {fileID: 2800000, guid: 27a3ea1e84b2c8246ab1dc2db459c107, type: 3}
   HealthStamBarChipSpeed: 2
