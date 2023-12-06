@@ -6,10 +6,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("----WinCon----")]
+    [Header("----GameStats----")]
     private int enemyCount;
     private int totalWaves;
     private int completedWaves;
+
+    [Header("-----Components----")]
+    public GameObject WinPanel;
+    public GameObject LosePanel;
+    public GameObject PauseMenu;
 
     #region Singleton
     private void Awake()
@@ -64,6 +69,42 @@ public class GameManager : MonoBehaviour
         if (enemyCount <=0 && completedWaves == totalWaves)
         {
             Debug.Log("You fuckin did it!");
+            WinGame();
         }
+    }
+
+    public void WinGame()
+    {
+        StartCoroutine(HandleWin());
+    }
+
+    public void LoseGame()
+    {
+        StartCoroutine(HandleLoss());
+    }
+
+    IEnumerator HandleWin()
+    {
+        PauseGame();
+        WinPanel.SetActive(true);
+        yield return new WaitForSecondsRealtime(4);
+        WinPanel.SetActive(false);
+        OpenPauseMenu();
+    }
+    IEnumerator HandleLoss()
+    {
+        PauseGame();
+        LosePanel.SetActive(true);
+        yield return new WaitForSecondsRealtime(4); // Wait for 2 seconds
+        LosePanel.SetActive(false);
+        OpenPauseMenu();
+    }
+    private void PauseGame()
+    {
+        Time.timeScale = 0; // Pauses the game
+    }
+    private void OpenPauseMenu()
+    {
+        PauseMenu.SetActive(true);
     }
 }

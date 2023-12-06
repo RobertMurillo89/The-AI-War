@@ -242,6 +242,10 @@ public class PlayerController : MonoBehaviour, IDamage
     public void takeDamage(int amount)
     {
         currentHealth -= amount;
+        if(currentHealth <= 0)
+        {
+            GameManager.Instance.LoseGame();
+        }
         healthLerpTimer = 0f; // this has to do with the special effect on the hud
     }
 }
