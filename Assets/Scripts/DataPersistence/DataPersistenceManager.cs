@@ -6,7 +6,7 @@ public class DataPersistenceManager : MonoBehaviour
 {
     private GameData gameData;
 
-    public static DataPersistenceManager Instance; { get; private set; }
+    public static DataPersistenceManager Instance { get; private set; }
 
     private void Awake()
     {
