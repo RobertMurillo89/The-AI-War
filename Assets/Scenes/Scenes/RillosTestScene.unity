@@ -406,7 +406,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1879915640650517074, guid: e1837a39874a4e241921b7b91dd98c49, type: 3}
       propertyPath: WaveDelay
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1879915640650517074, guid: e1837a39874a4e241921b7b91dd98c49, type: 3}
       propertyPath: SpawnDelay
@@ -430,7 +430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1879915640650517074, guid: e1837a39874a4e241921b7b91dd98c49, type: 3}
       propertyPath: ItemCounts.Array.data[2]
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1898550646540743892, guid: e1837a39874a4e241921b7b91dd98c49, type: 3}
       propertyPath: m_Name
@@ -732,7 +732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2076169988
 RectTransform:
   m_ObjectHideFlags: 0
@@ -968,7 +968,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1879915640650517074, guid: e1837a39874a4e241921b7b91dd98c49, type: 3}
       propertyPath: WaveDelay
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1879915640650517074, guid: e1837a39874a4e241921b7b91dd98c49, type: 3}
       propertyPath: ObjectToSpawn
@@ -988,7 +988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1879915640650517074, guid: e1837a39874a4e241921b7b91dd98c49, type: 3}
       propertyPath: ItemCounts.Array.data[2]
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1898550646540743892, guid: e1837a39874a4e241921b7b91dd98c49, type: 3}
       propertyPath: m_Name
