@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
     AudioSource MusicSource, AmbianceSource, SFXSource;
     public static AudioManager Instance;
 
-
+    #region Singleton
     private void Awake()
     {
         if (Instance == null)
@@ -19,4 +19,5 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    #endregion
 }
