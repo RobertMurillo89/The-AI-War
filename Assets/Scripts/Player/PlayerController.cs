@@ -294,11 +294,10 @@ public class PlayerController : MonoBehaviour, IDamage
         projectilePrefab = weapon.ProjectilePrefab;
 
         EquipedWeapon.GetComponent<SpriteRenderer>().sprite = weapon.WeaponModel;
-        // Scale the weapon holder to adjust the size of the weapon
-        float scaleX = 0.3f; // Example scale factor for x
-        float scaleY = 0.3f; // Example scale factor for y
-        EquipedWeapon.transform.localScale = new Vector3(scaleX, scaleY, 1f);
-        //selectedWeapon = weaponList.Count - 1;
+
+        //Changes the size of the weapon by scaling the equiped weapon object transform under the weapon holder in the heiarchy.
+        EquipedWeapon.transform.localScale = new Vector3(weapon.WeaponScaleX, weapon.WeaponScaleY, 1f);
+
         // Assuming 'currentWeapon' is the currently equipped weapon's WeaponStats
         Vector3 shootPosition = WeaponHolder.transform.position + weapon.ProjectileSpawnPoint;
 

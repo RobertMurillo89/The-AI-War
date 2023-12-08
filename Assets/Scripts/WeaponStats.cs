@@ -10,6 +10,8 @@ public class WeaponStats : ScriptableObject
     public float AttackRate;
     public int AttackDamage;
     public Sprite WeaponModel;
+    public float WeaponScaleX;
+    public float WeaponScaleY;
     public ParticleSystem hitEffect;
     public AudioClip AttackSound;
     public AudioClip ReloadSound;

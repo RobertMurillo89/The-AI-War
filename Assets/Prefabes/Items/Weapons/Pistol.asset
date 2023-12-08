@@ -16,6 +16,8 @@ MonoBehaviour:
   AttackRate: 2
   AttackDamage: 7
   WeaponModel: {fileID: 21300000, guid: 43acb64579f4a354cb2606bd8b6776de, type: 3}
+  WeaponScaleX: 0.2
+  WeaponScaleY: 0.2
   hitEffect: {fileID: 0}
   AttackSound: {fileID: 8300000, guid: e6e839ab07cfb3741bc83361e77f875e, type: 3}
   ReloadSound: {fileID: 8300000, guid: 632e4a81c161a444cb817178c12c9529, type: 3}
