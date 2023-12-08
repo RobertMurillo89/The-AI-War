@@ -19,7 +19,8 @@ public class WeaponStats : ScriptableObject
     public Sprite projectileSprite;
     public int ProjectileSpeed;
     public Projectile ProjectilePrefab;
-    public GameObject ProjectileSpawnPoint;
+    //public Transform ProjectileSpawnPoint;
+    public Vector3 ProjectileSpawnPoint;
 
 
 }

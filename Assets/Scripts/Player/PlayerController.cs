@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour, IDamage
     public Image FrontHealthBar, BackHealthBar, FrontStaminaBar, BackStaminaBar;
     public Rigidbody2D rb2D;
     public Transform WeaponHolder;
+    public Transform EquipedWeapon;
     public SpriteRenderer spriteRenderer;
 
     [Header("-----Audio-----")]
@@ -256,12 +257,9 @@ public class PlayerController : MonoBehaviour, IDamage
     public void WeaponPickUp(WeaponStats weapon)
     {
 
-    //public int selectedWeapon;
+        //public int selectedWeapon;
 
-
-    //public Projectile projectilePrefab; // Reference to your projectile prefab
-
-    WeaponList.Add(weapon);
+        WeaponList.Add(weapon);
 
         Damage = weapon.AttackDamage;
         AttackRate = weapon.AttackRate;
@@ -271,9 +269,20 @@ public class PlayerController : MonoBehaviour, IDamage
         ProjectileSprite = weapon.projectileSprite;
         projectilePrefab = weapon.ProjectilePrefab;
 
-        WeaponHolder.GetComponent<SpriteRenderer>().sprite = weapon.WeaponModel;
+        EquipedWeapon.GetComponent<SpriteRenderer>().sprite = weapon.WeaponModel;
+        Debug.Log("Before Scale: " + WeaponHolder.transform.localScale);
 
+        // Scale the weapon holder to adjust the size of the weapon
+        float scaleX = 0.3f; // Example scale factor for x
+        float scaleY = 0.3f; // Example scale factor for y
+        EquipedWeapon.transform.localScale = new Vector3(scaleX, scaleY, 1f);
         //selectedWeapon = weaponList.Count - 1;
+        Debug.Log("After Scale: " + WeaponHolder.transform.localScale);
+
+        // Assuming 'currentWeapon' is the currently equipped weapon's WeaponStats
+        Vector3 shootPosition = WeaponHolder.transform.position + weapon.ProjectileSpawnPoint;
+        Projectile newProjectile = Instantiate(projectilePrefab, shootPosition, WeaponHolder.transform.rotation);
+        // ... set up the projectile ...
 
         //UpdatePlayerUI();
     }
