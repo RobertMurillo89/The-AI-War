@@ -6,6 +6,7 @@ using UnityEngine;
 public class WeaponStats : ScriptableObject
 {
     [Header("-------WeaponStats-------")]
+    public WeaponType weaponType;
     public float AttackRate;
     public int AttackDamage;
     public Sprite WeaponModel;
@@ -22,5 +23,11 @@ public class WeaponStats : ScriptableObject
     //public Transform ProjectileSpawnPoint;
     public Vector3 ProjectileSpawnPoint;
 
-
+    public enum WeaponType
+    {
+        Melee,
+        MeleeWithAmmo, // chainsaw or something like that
+        Ranged,
+        Grenadier //grenade launcher or RPG..
+    }
 }

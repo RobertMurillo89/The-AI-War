@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour, IDamage
 
     [Header("-----Weapon Stats-----")]
     public List<WeaponStats> WeaponList = new List<WeaponStats>();
+    private WeaponStats CurrentWeapon;
+    public WeaponStats DefaultWeapon;
     public float AttackRate;
     public int Damage;
     private float nextFireTime;
@@ -59,6 +61,9 @@ public class PlayerController : MonoBehaviour, IDamage
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
         currentHealth = MaxHealth;
         currentStamina = MaxStamina;
+
+        //this will probably need to be chaned once i have an inventory. 
+        WeaponPickUp(DefaultWeapon);
     }
 
     void Update()
@@ -136,6 +141,29 @@ public class PlayerController : MonoBehaviour, IDamage
 
     void UseWeapon()
     {
+        if (CurrentWeapon == null) return;
+        HandleWeaponOrientation();
+        switch (CurrentWeapon.weaponType)
+        {
+            case WeaponStats.WeaponType.Melee:
+                break;
+            case WeaponStats.WeaponType.Ranged:
+
+                if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
+                {
+                    FireWeapon(); // Fire ranged weapon
+                }
+
+                break;
+            case WeaponStats.WeaponType.MeleeWithAmmo: 
+                break;
+            case WeaponStats.WeaponType.Grenadier: 
+                break;
+        }
+ 
+    }
+    void HandleWeaponOrientation()
+    {
         // Define mouse position early
         Vector3 mousePos = Input.mousePosition;
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.localPosition);
@@ -156,34 +184,30 @@ public class PlayerController : MonoBehaviour, IDamage
         Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
         WeaponHolder.rotation = Quaternion.Euler(0, 0, angle);
-
-        // Handle firing
-        if (Input.GetButton("Fire1") && Time.time >= nextFireTime) 
-        {
-            nextFireTime = Time.time + 1f / AttackRate;
-            PlayerSounds.PlayOneShot(AttackSound);
-
-            // Instantiate the projectile
-            Projectile newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
-
-            // Calculate shooting direction
-            Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            targetPos.z = 0f; // Ensure it's on the same Z plane as your character
-            Vector3 shootingDirection = (targetPos - transform.position).normalized;
-            // Set the projectile properties
-            newProjectile.SetProperties(Damage, ProjectileSpeed, shootingDirection, ProjectileSprite);
-            newProjectile.SetLayer(7); // 7 is playerprojectile layer. If this is changed this needs to be updated. 
-            // Apply offset
-            targetPos += new Vector3(offset.x, offset.y, 0f);
-
-            // Optionally rotate the projectile to align with the shooting direction
-            float projectileAngle = Mathf.Atan2(shootingDirection.y, shootingDirection.x) * Mathf.Rad2Deg;
-            newProjectile.transform.rotation = Quaternion.Euler(0, 0, projectileAngle);
-
-
-        }
     }
+    void FireWeapon()
+    {
+        nextFireTime = Time.time + 1f / AttackRate;
+        PlayerSounds.PlayOneShot(AttackSound);
 
+        // Instantiate the projectile
+        Projectile newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
+
+        // Calculate shooting direction
+        Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        targetPos.z = 0f; // Ensure it's on the same Z plane as your character
+        Vector3 shootingDirection = (targetPos - transform.position).normalized;
+        // Set the projectile properties
+        newProjectile.SetProperties(Damage, ProjectileSpeed, shootingDirection, ProjectileSprite);
+        newProjectile.SetLayer(7); // 7 is playerprojectile layer. If this is changed this needs to be updated. 
+                                   // Apply offset
+        targetPos += new Vector3(offset.x, offset.y, 0f);
+
+        // Optionally rotate the projectile to align with the shooting direction
+        float projectileAngle = Mathf.Atan2(shootingDirection.y, shootingDirection.x) * Mathf.Rad2Deg;
+        newProjectile.transform.rotation = Quaternion.Euler(0, 0, projectileAngle);
+
+    }
     public void UpdateHealthUI()
     {
 
@@ -258,8 +282,8 @@ public class PlayerController : MonoBehaviour, IDamage
     {
 
         //public int selectedWeapon;
-
         WeaponList.Add(weapon);
+        CurrentWeapon = weapon;
 
         Damage = weapon.AttackDamage;
         AttackRate = weapon.AttackRate;
@@ -270,19 +294,13 @@ public class PlayerController : MonoBehaviour, IDamage
         projectilePrefab = weapon.ProjectilePrefab;
 
         EquipedWeapon.GetComponent<SpriteRenderer>().sprite = weapon.WeaponModel;
-        Debug.Log("Before Scale: " + WeaponHolder.transform.localScale);
-
         // Scale the weapon holder to adjust the size of the weapon
         float scaleX = 0.3f; // Example scale factor for x
         float scaleY = 0.3f; // Example scale factor for y
         EquipedWeapon.transform.localScale = new Vector3(scaleX, scaleY, 1f);
         //selectedWeapon = weaponList.Count - 1;
-        Debug.Log("After Scale: " + WeaponHolder.transform.localScale);
-
         // Assuming 'currentWeapon' is the currently equipped weapon's WeaponStats
         Vector3 shootPosition = WeaponHolder.transform.position + weapon.ProjectileSpawnPoint;
-        Projectile newProjectile = Instantiate(projectilePrefab, shootPosition, WeaponHolder.transform.rotation);
-        // ... set up the projectile ...
 
         //UpdatePlayerUI();
     }

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3dcc6d94c0b13b4ea6aaf237c93f2e1, type: 3}
-  m_Name: Ak-47
+  m_Name: Pistol
   m_EditorClassIdentifier: 
   weaponType: 2
-  AttackRate: 2.5
-  AttackDamage: 5
-  WeaponModel: {fileID: 21300000, guid: 46a34e738cc7af245b01fe392551e721, type: 3}
+  AttackRate: 2
+  AttackDamage: 7
+  WeaponModel: {fileID: 21300000, guid: 43acb64579f4a354cb2606bd8b6776de, type: 3}
   hitEffect: {fileID: 0}
   AttackSound: {fileID: 8300000, guid: e6e839ab07cfb3741bc83361e77f875e, type: 3}
   ReloadSound: {fileID: 8300000, guid: 632e4a81c161a444cb817178c12c9529, type: 3}
-  ammoCur: 30
-  ammoMax: 30
+  ammoCur: 12
+  ammoMax: 12
   projectileSprite: {fileID: 21300000, guid: 14376c689ff2e81478a267f8b1b3b281, type: 3}
   ProjectileSpeed: 20
   ProjectilePrefab: {fileID: 6896284679291782774, guid: 9a00fcf3d554f4d48b2a68f8e70695dc, type: 3}
