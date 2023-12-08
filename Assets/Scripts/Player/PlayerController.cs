@@ -21,13 +21,13 @@ public class PlayerController : MonoBehaviour, IDamage
     public List<WeaponStats> WeaponList = new List<WeaponStats>();
     public float AttackRate;
     public int Damage;
+    private float nextFireTime;
+    public int selectedWeapon;
     public float ProjectileSpeed;
+    public Sprite WeaponSprite;
     public Sprite ProjectileSprite;
     public Transform projectileSpawnPoint;
     public Projectile projectilePrefab; // Reference to your projectile prefab
-    public Sprite WeaponSprite;
-    private float nextFireTime;
-    public int selectedWeapon;
 
 
 
@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour, IDamage
     [Header("-----Audio-----")]
 
     [SerializeField] AudioSource PlayerSounds;
-    [SerializeField] AudioClip shoot;
+    [SerializeField] AudioClip AttackSound;
+    [SerializeField] AudioClip ReloadSound;
 
 
     private Vector2 moveInput;
@@ -159,7 +160,7 @@ public class PlayerController : MonoBehaviour, IDamage
         if (Input.GetButton("Fire1") && Time.time >= nextFireTime) 
         {
             nextFireTime = Time.time + 1f / AttackRate;
-            PlayerSounds.PlayOneShot(shoot);
+            PlayerSounds.PlayOneShot(AttackSound);
 
             // Instantiate the projectile
             Projectile newProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
@@ -254,14 +255,23 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public void WeaponPickUp(WeaponStats weapon)
     {
-        //weaponList.Add(weapon);
 
-        //Damage = weapon.Damage;
-        //AttackRate = weapon.AttackRate;
-        //WeaponSource.clip = weapon.WeaponSound;
+    //public int selectedWeapon;
 
-        //WeaponModel.GetComponent<MeshFilter>().sharedMesh = weapon.model.GetComponent<MeshFilter>().sharedMesh;
-        //WeaponModel.GetComponent<MeshRenderer>().sharedMaterial = weapon.model.GetComponent<MeshRenderer>().sharedMaterial;
+
+    //public Projectile projectilePrefab; // Reference to your projectile prefab
+
+    WeaponList.Add(weapon);
+
+        Damage = weapon.AttackDamage;
+        AttackRate = weapon.AttackRate;
+        PlayerSounds.clip = weapon.AttackSound;
+        WeaponSprite = weapon.WeaponModel;
+        ProjectileSpeed = weapon.ProjectileSpeed;
+        ProjectileSprite = weapon.projectileSprite;
+        projectilePrefab = weapon.ProjectilePrefab;
+
+        WeaponHolder.GetComponent<SpriteRenderer>().sprite = weapon.WeaponModel;
 
         //selectedWeapon = weaponList.Count - 1;
 

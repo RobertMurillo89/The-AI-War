@@ -2,19 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponStats : MonoBehaviour
+[CreateAssetMenu]
+public class WeaponStats : ScriptableObject
 {
     [Header("-------WeaponStats-------")]
     public float AttackRate;
     public int AttackDamage;
-    public GameObject model;
+    public Sprite WeaponModel;
     public ParticleSystem hitEffect;
-    public AudioClip shootSound;
+    public AudioClip AttackSound;
+    public AudioClip ReloadSound;
 
     [Header("-----IfRangedWeapon-----")]
     public int ammoCur;
     public int ammoMax;
     public Sprite projectileSprite;
+    public int ProjectileSpeed;
+    public Projectile ProjectilePrefab;
+    public GameObject ProjectileSpawnPoint;
 
 
 }
