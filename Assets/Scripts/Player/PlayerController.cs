@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
                 if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
                 {
-                    FireWeapon(); // Fire ranged weapon
+                    Shoot(); // Fire ranged weapon
                 }
 
                 break;
@@ -185,7 +185,7 @@ public class PlayerController : MonoBehaviour, IDamage
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
         WeaponHolder.rotation = Quaternion.Euler(0, 0, angle);
     }
-    void FireWeapon()
+    void Shoot()
     {
         nextFireTime = Time.time + 1f / AttackRate;
         PlayerSounds.PlayOneShot(AttackSound);
