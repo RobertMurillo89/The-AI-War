@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour, IDamage
     public Transform WeaponHolder;
     public Transform EquipedWeapon;
     public SpriteRenderer spriteRenderer;
+    public CharacterData CharacterData;
 
     [Header("-----Audio-----")]
 
@@ -62,8 +63,11 @@ public class PlayerController : MonoBehaviour, IDamage
         currentHealth = MaxHealth;
         currentStamina = MaxStamina;
 
-        //this will probably need to be chaned once i have an inventory. 
-        WeaponPickUp(DefaultWeapon);
+        if (CurrentWeapon == null)
+        {
+            WeaponPickUp(DefaultWeapon);
+
+        }
     }
 
     void Update()
@@ -302,7 +306,11 @@ public class PlayerController : MonoBehaviour, IDamage
         Vector3 shootPosition = WeaponHolder.transform.position + weapon.ProjectileSpawnPoint;
 
         //UpdatePlayerUI();
+
+        CharacterData.AddItem(weapon);
+        SaveManager.Instance.RequestSave();
     }
+
 }
 
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
     public GameObject LosePanel;
     public GameObject PauseMenu;
     public PlayerController PlayerScript;
+    public CharacterData charData;
+    public SaveManager SaveManager;
 
     #region Singleton
     private void Awake()
@@ -31,6 +34,15 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
+
+
+    private void Start()
+    {
+        StartLevel();
+        SaveManager.Instance.LoadCharacterData();
+    }
+
+
 
     public void StartLevel()
     {
@@ -108,4 +120,6 @@ public class GameManager : MonoBehaviour
     {
         PauseMenu.SetActive(true);
     }
+
+
 }

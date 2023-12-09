@@ -7,11 +7,12 @@ using UnityEditor.PackageManager.UI;
 using UnityEditor.PackageManager;
 using UnityEngine;
 using static UnityEditor.Progress;
+using System.IO;
 
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance;
-    private CharacterData curCharData;
+    public CharacterData curCharData;
     private float saveCooldown = 5f;
     private float lastSaveTime = -Mathf.Infinity;
 
@@ -32,26 +33,49 @@ public class SaveManager : MonoBehaviour
 
     public void RequestSave()
     {
-        if (Time.time - lastSaveTime > saveCooldown)
+        if(curCharData.NeedSave())
         {
-            lastSaveTime = Time.time;
-            SaveDataAsync();
+            if (Time.time - lastSaveTime > saveCooldown)
+            {
+                lastSaveTime = Time.time;
+                SaveDataAsync();
+                curCharData.ResetSaveFlag();
+            }
         }
+
     }
 
     private void SaveDataAsync()
     {
+        string filePath = Path.Combine(Application.persistentDataPath, "characterData.dat");
+
         Task.Run(() =>
         {
-            // Serialie currentPlayerData to binary
-            //Write to file
+            // Assuming curCharData is the current instance of CharacterData to be saved
+            DataSerializer.SerializeObject(filePath, curCharData);
+            Debug.Log(filePath);
+            // You can also handle exceptions here to deal with any serialization errors
         });
     }
 
+    public void LoadCharacterData()
+    {
+        if (this.curCharData == null)
+        {
+            Debug.Log(":No data was found. Initializging data to defaults.");
+            NewCharacter();
+        }
+        string filePath = Path.Combine(Application.persistentDataPath, "characterData.dat");
+        curCharData = DataSerializer.DeserializeObject<CharacterData>(filePath);
+    }
 
-    // other methods for loading data, hashing, etc...
+    public void NewCharacter()
+    {
+        this.curCharData = new CharacterData();
+    }
+    // other methods for hashing, etc...
 
 
-   // Attach save requests to these events.For example, when a player picks up an item,
+   // Attach save requests to these events. For example, when a player picks up an item,
    // it should call SaveManager.Instance.RequestSave()
 }

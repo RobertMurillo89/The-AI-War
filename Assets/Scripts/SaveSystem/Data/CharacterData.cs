@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
@@ -5,12 +6,31 @@ using Unity.Burst.Intrinsics;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CharacterData : MonoBehaviour
+[System.Serializable]
+public class CharacterData
 {
-    //public InventoryData inventory;
-    // Other relevant data fields
+    [SerializeField] List<WeaponStats> Items = new List<WeaponStats>();
+    private bool isDirty = false;
 
-    //Ensure that your PlayerData class or similar structures are updated in real-time as the player progresses through the game.
-    //Whenever a relevant change occurs in the game (like an inventory update), the data in PlayerData should reflect this change
-    //immediately.
+    public void AddItem(WeaponStats item)
+    {
+        Items.Add(item);
+        isDirty = true;
+    }
+
+    public void RemoveItem(WeaponStats item)
+    {
+        Items.Remove(item);
+        isDirty = true;
+    }
+
+    public bool NeedSave()
+    {
+        return isDirty;
+    }
+
+    public void ResetSaveFlag()
+    {
+        isDirty = false;
+    }
 }
