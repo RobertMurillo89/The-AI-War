@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         StartLevel();
-        SaveManager.Instance.LoadCharacterData();
+        //SaveManager.Instance.LoadCharacterData();
     }
 
 

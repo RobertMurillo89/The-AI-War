@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour, IDamage
     public Transform WeaponHolder;
     public Transform EquipedWeapon;
     public SpriteRenderer spriteRenderer;
-    public CharacterData CharacterData;
+    //public CharacterData CharacterData;
 
     [Header("-----Audio-----")]
 
@@ -307,8 +307,8 @@ public class PlayerController : MonoBehaviour, IDamage
 
         //UpdatePlayerUI();
 
-        CharacterData.AddItem(weapon);
-        SaveManager.Instance.RequestSave();
+        //CharacterData.AddItem(weapon);
+        //SaveManager.Instance.RequestSave();
     }
 
 }
