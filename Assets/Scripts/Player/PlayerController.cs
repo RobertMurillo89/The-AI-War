@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour, IDamage
+public class PlayerController : MonoBehaviour, IDamage, ISaver
 {
     [Header("----- Player Stats -----")]
     [SerializeField] float currentMovementSpeed;
@@ -288,7 +288,7 @@ public class PlayerController : MonoBehaviour, IDamage
         //public int selectedWeapon;
         WeaponList.Add(weapon);
         CurrentWeapon = weapon;
-
+        SaveManager.Instance.RequestSave();
         Damage = weapon.AttackDamage;
         AttackRate = weapon.AttackRate;
         PlayerSounds.clip = weapon.AttackSound;
@@ -311,6 +311,15 @@ public class PlayerController : MonoBehaviour, IDamage
         //SaveManager.Instance.RequestSave();
     }
 
+    public void LoadData(CharacterData characterData)
+    {
+        this.WeaponList = characterData.Items;
+    }
+
+    public void SaveData(ref CharacterData characterData)
+    {
+        characterData.Items = this.WeaponList;
+    }
 }
 
 
