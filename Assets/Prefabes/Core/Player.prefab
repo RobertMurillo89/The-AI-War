@@ -126,6 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5591061869437817109}
   - component: {fileID: 5524641052269396634}
+  - component: {fileID: 8206271641054534554}
   - component: {fileID: 6802266017078519815}
   - component: {fileID: 475342689349204319}
   m_Layer: 6
@@ -175,7 +176,7 @@ MonoBehaviour:
   StaminaRegenRate: 10
   SprintSpeedMultiplier: 1.3
   IdleTimeForStaminaRegen: 1.3
-  WeaponList: []
+  inventory: {fileID: 8206271641054534554}
   DefaultWeapon: {fileID: 11400000, guid: c3a109f9b6fa23f4f8b937077c2b7fd9, type: 2}
   AttackRate: 0
   Damage: 0
@@ -199,6 +200,21 @@ MonoBehaviour:
   PlayerSounds: {fileID: 4200030659426707579}
   AttackSound: {fileID: 0}
   ReloadSound: {fileID: 0}
+--- !u!114 &8206271641054534554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2307292977332800950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f740fdb5078f3d4bb59da6d09b2bea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponList: []
+  CharacterData:
+    Items: []
 --- !u!50 &6802266017078519815
 Rigidbody2D:
   serializedVersion: 4
@@ -416,7 +432,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.24047987, y: 0.24047987, z: 0.24047987}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5591061869437817109}
@@ -462,7 +478,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 001c7df16cb5be343a80ed398e9a008f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 830c555da10f22d4d848ccd1ab3828fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

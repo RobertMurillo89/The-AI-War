@@ -62,11 +62,7 @@ public class PlayerController : MonoBehaviour, IDamage
         currentHealth = MaxHealth;
         currentStamina = MaxStamina;
 
-        if (CurrentWeapon == null)
-        {
-            WeaponPickUp(DefaultWeapon);
-
-        }
+        EquipWeapon(inventory.WeaponList.Count > 0 ? inventory.WeaponList[0] : DefaultWeapon);
     }
 
     void Update()
@@ -281,9 +277,8 @@ public class PlayerController : MonoBehaviour, IDamage
         healthLerpTimer = 0f; // this has to do with the special effect on the hud
     }
 
-    public void WeaponPickUp(WeaponStats weapon)
+    public void EquipWeapon(WeaponStats weapon)
     {
-        inventory.AddItem(weapon);
         CurrentWeapon = weapon;
         Damage = weapon.AttackDamage;
         AttackRate = weapon.AttackRate;
@@ -292,7 +287,6 @@ public class PlayerController : MonoBehaviour, IDamage
         ProjectileSpeed = weapon.ProjectileSpeed;
         ProjectileSprite = weapon.projectileSprite;
         projectilePrefab = weapon.ProjectilePrefab;
-
         EquipedWeapon.GetComponent<SpriteRenderer>().sprite = weapon.WeaponModel;
 
         //Changes the size of the weapon by scaling the equiped weapon object transform under the weapon holder in the heiarchy.
@@ -300,7 +294,11 @@ public class PlayerController : MonoBehaviour, IDamage
 
         // Assuming 'currentWeapon' is the currently equipped weapon's WeaponStats
         Vector3 shootPosition = WeaponHolder.transform.position + weapon.ProjectileSpawnPoint;
+    }
 
+    public void WeaponPickUp(WeaponStats weapon)
+    {
+        inventory.AddItem(weapon);
     }
 
 }

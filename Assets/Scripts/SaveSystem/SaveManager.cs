@@ -14,6 +14,7 @@ public class SaveManager : MonoBehaviour
 {
     [Header("File Storage Config")]
     [SerializeField] private string fileName;
+    [SerializeField] private bool useEncryption;
     private DataSerializer serializer;
 
     public static SaveManager Instance;
@@ -41,9 +42,10 @@ public class SaveManager : MonoBehaviour
 
     private void Start()
     {
-        this.serializer = new DataSerializer(Application.persistentDataPath, fileName);
+        this.serializer = new DataSerializer(Application.persistentDataPath, fileName, useEncryption);
         this.thingsToSave = FindAllItemsToSave();
         LoadCharacterData();
+
     }
 
     public void RequestSave()
