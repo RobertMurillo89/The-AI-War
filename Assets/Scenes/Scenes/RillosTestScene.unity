@@ -1234,14 +1234,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveManager
       objectReference: {fileID: 0}
-    - target: {fileID: 1854553468535668853, guid: 406078993f876944bb7f73b2f5fef659, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3110667312813336648, guid: 406078993f876944bb7f73b2f5fef659, type: 3}
-      propertyPath: useEncryption
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3902302109315344344, guid: 406078993f876944bb7f73b2f5fef659, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.563244
@@ -1448,10 +1440,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8206271641054534554, guid: 2b77817a536e30949892a089bf9a36e1, type: 3}
-      propertyPath: DefaultWeapon
-      value: 
-      objectReference: {fileID: 11400000, guid: c3a109f9b6fa23f4f8b937077c2b7fd9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

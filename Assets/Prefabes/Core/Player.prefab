@@ -177,7 +177,6 @@ MonoBehaviour:
   SprintSpeedMultiplier: 1.3
   IdleTimeForStaminaRegen: 1.3
   inventory: {fileID: 8206271641054534554}
-  DefaultWeapon: {fileID: 11400000, guid: c3a109f9b6fa23f4f8b937077c2b7fd9, type: 2}
   AttackRate: 0
   Damage: 0
   selectedWeapon: 0
@@ -215,6 +214,7 @@ MonoBehaviour:
   WeaponList: []
   CharacterData:
     Items: []
+  DefaultWeapon: {fileID: 11400000, guid: c3a109f9b6fa23f4f8b937077c2b7fd9, type: 2}
 --- !u!50 &6802266017078519815
 Rigidbody2D:
   serializedVersion: 4
