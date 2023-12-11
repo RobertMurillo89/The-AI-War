@@ -47,13 +47,13 @@ public class AI_Chess : EnemyAI
             else
             {
                 canIMove.offset = otherCheackBox;
-                if (iCantMove) transform.Translate(otherDirection * movement * Time.deltaTime);
-                else
-                {
-                    Direction = retreat;
-                    ticks = 5;
-                    transform.Translate(Direction * movement * Time.deltaTime);
-                }
+                transform.Translate(otherDirection * movement * Time.deltaTime);
+               //if
+               // {
+                   //Direction = retreat;
+                    //ticks = 5;
+                    //transform.Translate(Direction * movement * Time.deltaTime);
+                //}
                 canIMove.offset = DirectionCheackBox;
             }
         }
@@ -68,7 +68,7 @@ public class AI_Chess : EnemyAI
         Vector3 VDirection = Vector3.zero;
         Vector2 direction = player.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            DiceRoll = Random.Range(0, 2);
+        DiceRoll = Random.Range(0, 2);
         if (angle >= -22.5f && angle < 22.5f)
         {
             VDirection = new Vector3(1, 0, 0).normalized;
@@ -77,7 +77,7 @@ public class AI_Chess : EnemyAI
             {
                 otherDirection = new Vector3(0, 1, 0).normalized;
                 otherCheackBox = new Vector2(0, 1);
-                retreat = new Vector3 (1,-1,0).normalized;
+                retreat = new Vector3(1, -1, 0).normalized;
             }
             else
             {
