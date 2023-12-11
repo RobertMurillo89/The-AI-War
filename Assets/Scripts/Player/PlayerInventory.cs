@@ -8,7 +8,7 @@ public class PlayerInventory : MonoBehaviour, ISaver
     public CharacterData CharacterData;
     public WeaponStats DefaultWeapon;
 
-    void start()
+    void Start()
     {
         if (WeaponList.Count == 0 && DefaultWeapon != null)
         {
