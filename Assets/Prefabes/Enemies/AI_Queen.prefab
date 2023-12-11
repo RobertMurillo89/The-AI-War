@@ -110,8 +110,8 @@ MonoBehaviour:
   EmoteSource: {fileID: 2406764192115508453}
   WeaponSource: {fileID: 0}
   player: {fileID: 0}
-  movement: 15
-  moveTicks: 100
+  movement: 5
+  moveTicks: 200
   canIMove: {fileID: 7739060383865595899}
   otherChecker: {fileID: 0}
 --- !u!50 &53486878209074648
