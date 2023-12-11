@@ -8,10 +8,10 @@ public class DevTool : MonoBehaviour
 
     public void GoFaster()
     {
-        player.MoveSpeed +=1f;
+        player.MoveSpeed += 10f;
     }
     public void GoSlower()
     {
-        player.MoveSpeed -=1f;
+        player.MoveSpeed = 5f;
     }
 }
