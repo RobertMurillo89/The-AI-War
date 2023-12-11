@@ -12,11 +12,17 @@ using System.Linq;
 
 public class SaveManager : MonoBehaviour
 {
+    [Header("File Storage Config")]
+    [SerializeField] private string fileName;
+    private DataSerializer serializer;
+
     public static SaveManager Instance;
     private CharacterData curCharData;
     private float saveCooldown = 2f;
     private float lastSaveTime = -Mathf.Infinity;
     private List<ISaver> thingsToSave;
+
+   
 
     #region Singleton
     private void Awake()
@@ -35,6 +41,7 @@ public class SaveManager : MonoBehaviour
 
     private void Start()
     {
+        this.serializer = new DataSerializer(Application.persistentDataPath, fileName);
         this.thingsToSave = FindAllItemsToSave();
         LoadCharacterData();
     }
@@ -68,10 +75,15 @@ public class SaveManager : MonoBehaviour
         //});
 
         Debug.Log("GameSaved");
+
+        serializer.Save(curCharData);
     }
 
     public void LoadCharacterData()
     {
+
+        this.curCharData = serializer.Load();
+
         if (this.curCharData == null)
         {
             Debug.Log(":No data was found. Initializging data to defaults.");
