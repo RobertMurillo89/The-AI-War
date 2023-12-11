@@ -14,7 +14,7 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance;
     private CharacterData curCharData;
-    private float saveCooldown = 5f;
+    private float saveCooldown = 2f;
     private float lastSaveTime = -Mathf.Infinity;
     private List<ISaver> thingsToSave;
 
@@ -58,14 +58,14 @@ public class SaveManager : MonoBehaviour
             thingToSave.SaveData(ref curCharData);
         }
 
-        string filePath = Path.Combine(Application.persistentDataPath, "characterData.dat");
-        Task.Run(() =>
-        {
-            // Assuming curCharData is the current instance of CharacterData to be saved
-            DataSerializer.SerializeObject(filePath, curCharData);
-            Debug.Log(filePath);
-            // You can also handle exceptions here to deal with any serialization errors
-        });
+        //string filePath = Path.Combine(Application.persistentDataPath, "characterData.dat");
+        //Task.Run(() =>
+        //{
+        //    // Assuming curCharData is the current instance of CharacterData to be saved
+        //    DataSerializer.SerializeObject(filePath, curCharData);
+        //    Debug.Log(filePath);
+        //    // You can also handle exceptions here to deal with any serialization errors
+        //});
 
         Debug.Log("GameSaved");
     }
@@ -83,8 +83,8 @@ public class SaveManager : MonoBehaviour
             thingToSave.LoadData(curCharData);
         }
 
-        string filePath = Path.Combine(Application.persistentDataPath, "characterData.dat");
-        curCharData = DataSerializer.DeserializeObject<CharacterData>(filePath);
+        //string filePath = Path.Combine(Application.persistentDataPath, "characterData.dat");
+        //curCharData = DataSerializer.DeserializeObject<CharacterData>(filePath);
 
         Debug.Log("GameLoaded");
     }

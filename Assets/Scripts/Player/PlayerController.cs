@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour, IDamage//, ISaver
+public class PlayerController : MonoBehaviour, IDamage
 {
     [Header("----- Player Stats -----")]
     [SerializeField] float currentMovementSpeed;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour, IDamage//, ISaver
     public float IdleTimeForStaminaRegen;
 
     [Header("-----Weapon Stats-----")]
-    public List<WeaponStats> WeaponList = new List<WeaponStats>();
+    public PlayerInventory inventory;
     private WeaponStats CurrentWeapon;
     public WeaponStats DefaultWeapon;
     public float AttackRate;
@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour, IDamage//, ISaver
     public Transform WeaponHolder;
     public Transform EquipedWeapon;
     public SpriteRenderer spriteRenderer;
-    //public CharacterData CharacterData;
 
     [Header("-----Audio-----")]
 
@@ -284,11 +283,8 @@ public class PlayerController : MonoBehaviour, IDamage//, ISaver
 
     public void WeaponPickUp(WeaponStats weapon)
     {
-
-        //public int selectedWeapon;
-        WeaponList.Add(weapon);
+        inventory.AddItem(weapon);
         CurrentWeapon = weapon;
-        //SaveManager.Instance.RequestSave();
         Damage = weapon.AttackDamage;
         AttackRate = weapon.AttackRate;
         PlayerSounds.clip = weapon.AttackSound;
@@ -305,21 +301,8 @@ public class PlayerController : MonoBehaviour, IDamage//, ISaver
         // Assuming 'currentWeapon' is the currently equipped weapon's WeaponStats
         Vector3 shootPosition = WeaponHolder.transform.position + weapon.ProjectileSpawnPoint;
 
-        //UpdatePlayerUI();
-
-        //CharacterData.AddItem(weapon);
-        //SaveManager.Instance.RequestSave();
     }
 
-    //public void LoadData(CharacterData characterData)
-    //{
-    //    this.WeaponList = characterData.Items;
-    //}
-
-    //public void SaveData(ref CharacterData characterData)
-    //{
-    //    characterData.Items = this.WeaponList;
-    //}
 }
 
 
