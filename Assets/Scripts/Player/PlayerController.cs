@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour, IDamage
     [Header("-----Weapon Stats-----")]
     public PlayerInventory inventory;
     private WeaponStats CurrentWeapon;
-    public WeaponStats DefaultWeapon;
+    //public WeaponStats DefaultWeapon;
     public float AttackRate;
     public int Damage;
     private float nextFireTime;
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour, IDamage
         currentHealth = MaxHealth;
         currentStamina = MaxStamina;
 
-        EquipWeapon(inventory.WeaponList.Count > 0 ? inventory.WeaponList[0] : DefaultWeapon);
+        EquipWeapon(inventory.WeaponList.Count > 0 ? inventory.WeaponList[0] : inventory.DefaultWeapon);
     }
 
     void Update()
