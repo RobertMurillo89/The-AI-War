@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9901b364f385b44fbff3372c060009d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinPanel: {fileID: 0}
+  LosePanel: {fileID: 0}
+  PauseMenu: {fileID: 0}
+  PlayerScript: {fileID: 0}
+  charData:
+    Items: []
+  SaveManager: {fileID: 0}
