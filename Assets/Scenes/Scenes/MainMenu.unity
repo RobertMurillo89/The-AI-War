@@ -3273,7 +3273,7 @@ MonoBehaviour:
   AmbiSlider: {fileID: 1362565163}
   SFXSlider: {fileID: 1057991317}
   MainMenuMusic:
-  - {fileID: 8300000, guid: 0e87fa576dd211049b3bfee01ed59cb8, type: 3}
+  - {fileID: 8300000, guid: 62060f614a8f03249976ce9971e3810e, type: 3}
   MainMenuAmbi: []
 --- !u!82 &1238423711 stripped
 AudioSource:
