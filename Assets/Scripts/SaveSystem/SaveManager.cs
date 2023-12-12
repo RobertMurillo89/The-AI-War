@@ -9,6 +9,7 @@ using UnityEngine;
 using static UnityEditor.Progress;
 using System.IO;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
@@ -34,16 +35,35 @@ public class SaveManager : MonoBehaviour
         else if (Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+
+        this.serializer = new DataSerializer(Application.persistentDataPath, fileName, useEncryption);
+
     }
     #endregion
 
-    private void Start()
+    private void OnEnable()
     {
-        this.serializer = new DataSerializer(Application.persistentDataPath, fileName, useEncryption);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
         this.thingsToSave = FindAllItemsToSave();
         LoadCharacterData();
+    }
 
+    public void OnSceneUnloaded(Scene scene)
+    {
+        SaveDataAsync();
     }
 
     public void RequestSave()
@@ -59,6 +79,13 @@ public class SaveManager : MonoBehaviour
 
     private void SaveDataAsync()
     {
+
+        if (this.curCharData == null)
+        {
+            Debug.LogWarning("No data found, new game must be started before data can be saved");
+            return;
+        }
+
         foreach (ISaver thingToSave in thingsToSave)
         {
             thingToSave.SaveData(ref curCharData);
@@ -76,8 +103,8 @@ public class SaveManager : MonoBehaviour
 
         if (this.curCharData == null)
         {
-            Debug.Log(":No data was found. Initializging data to defaults.");
-            NewCharacter("");
+            Debug.Log(":No data was found. A new game must be started before data can be loaded.");
+            return;
         }
 
         foreach (ISaver thingToSave in thingsToSave)
@@ -116,5 +143,10 @@ public class SaveManager : MonoBehaviour
         {
             return "";
         }
+    }
+
+    public bool HasCharData()
+    {
+        return curCharData != null;
     }
 }

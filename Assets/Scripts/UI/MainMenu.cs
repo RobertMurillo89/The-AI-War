@@ -40,6 +40,10 @@ public class MainMenu : MonoBehaviour
     }
     private void Start()
     {
+        if (!SaveManager.Instance.HasCharData())
+        {
+            
+        }
         UpdateInitialVolumes();
         PlayMusic(MusicSource, MainMenuMusic);
         UpdateCharacterNameOnUI();
@@ -49,7 +53,7 @@ public class MainMenu : MonoBehaviour
     #region ButtonFunctions
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(1);       
     }
 
     public void ActivateNameEntry()
