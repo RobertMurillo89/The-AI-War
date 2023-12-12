@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -13,15 +15,35 @@ public class MainMenu : MonoBehaviour
     public AudioSource MusicSource, AmbianceSource, SFXSource;
     public Slider MasterSlider, MusicSlider, AmbiSlider, SFXSlider;
     public AudioClip[] MainMenuMusic, MainMenuAmbi;
-    
+
+    [Header("-----Charcter Creation-----")]
+    public Button createCharacterButton;
+    public TMP_InputField NameInputField;
+    public Button checkButton;  
+    public GameObject selectCharacterOptions;
+    public GameObject characterCreationPanel;
+    public GameObject mainMenuPanel;
+    public CharacterData characterData;
+    public TMP_Text characterNameText;
+    public GameObject characterCreationOptions;
 
     private float masterVolume, musicVolume, ambiVolume, sfxVolume;
     private bool isMasterMuted, isMusicMuted, isAmbiMuted, isSFXMuted;
 
+    private void Awake()
+    {
+        NameInputField.gameObject.SetActive(false);
+        checkButton.gameObject.SetActive(false);
+
+        NameInputField.onValueChanged.AddListener(delegate { EnableCheckButton(); });
+
+    }
     private void Start()
     {
         UpdateInitialVolumes();
         PlayMusic(MusicSource, MainMenuMusic);
+        UpdateCharacterNameOnUI();
+
     }
 
     #region ButtonFunctions
@@ -30,6 +52,47 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync(1);
     }
 
+    public void ActivateNameEntry()
+    {
+        NameInputField.gameObject.SetActive(true);
+        NameInputField.Select();
+        NameInputField.ActivateInputField();      
+    }
+    private void EnableCheckButton()
+    {
+        checkButton.gameObject.SetActive(NameInputField.text.Length > 0);
+
+    }
+    public void CreateCharacter()
+    {
+        Debug.Log("CreateCharacter Called.");
+
+        string newCharacterName = NameInputField.text;
+        SaveManager.Instance.NewCharacter(newCharacterName);
+        SaveManager.Instance.RequestSave();
+
+        characterCreationOptions.gameObject.SetActive(false);
+        selectCharacterOptions.gameObject.SetActive(true);
+
+        
+      
+    }
+
+    public void SelectCharacterAndReturnToMenu()
+    {
+        characterCreationPanel.gameObject.SetActive(false);
+        mainMenuPanel.gameObject.SetActive(true);
+        characterNameText.text = SaveManager.Instance.GetCurrentCharacterName();
+    }
+
+    private void UpdateCharacterNameOnUI()
+    {
+        if (SaveManager.Instance != null)
+        {
+            string currentCharacterName = SaveManager.Instance.GetCurrentCharacterName();
+            characterNameText.text = currentCharacterName;
+        }
+    }
     public void QuitGame()
     {
         Application.Quit();

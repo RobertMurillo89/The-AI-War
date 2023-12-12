@@ -23,8 +23,6 @@ public class SaveManager : MonoBehaviour
     private float lastSaveTime = -Mathf.Infinity;
     private List<ISaver> thingsToSave;
 
-   
-
     #region Singleton
     private void Awake()
     {
@@ -57,7 +55,6 @@ public class SaveManager : MonoBehaviour
             SaveDataAsync();
         }
 
-
     }
 
     private void SaveDataAsync()
@@ -66,15 +63,6 @@ public class SaveManager : MonoBehaviour
         {
             thingToSave.SaveData(ref curCharData);
         }
-
-        //string filePath = Path.Combine(Application.persistentDataPath, "characterData.dat");
-        //Task.Run(() =>
-        //{
-        //    // Assuming curCharData is the current instance of CharacterData to be saved
-        //    DataSerializer.SerializeObject(filePath, curCharData);
-        //    Debug.Log(filePath);
-        //    // You can also handle exceptions here to deal with any serialization errors
-        //});
 
         Debug.Log("GameSaved");
 
@@ -89,7 +77,7 @@ public class SaveManager : MonoBehaviour
         if (this.curCharData == null)
         {
             Debug.Log(":No data was found. Initializging data to defaults.");
-            NewCharacter();
+            NewCharacter("");
         }
 
         foreach (ISaver thingToSave in thingsToSave)
@@ -97,15 +85,7 @@ public class SaveManager : MonoBehaviour
             thingToSave.LoadData(curCharData);
         }
 
-        //string filePath = Path.Combine(Application.persistentDataPath, "characterData.dat");
-        //curCharData = DataSerializer.DeserializeObject<CharacterData>(filePath);
-
         Debug.Log("GameLoaded");
-    }
-
-    public void NewCharacter()
-    {
-        this.curCharData = new CharacterData();
     }
 
     private List<ISaver> FindAllItemsToSave()
@@ -113,5 +93,28 @@ public class SaveManager : MonoBehaviour
         IEnumerable<ISaver> itemsToSave = FindObjectsOfType<MonoBehaviour>().OfType<ISaver>();
 
         return new List<ISaver>(itemsToSave);
+    }
+
+
+    public void NewCharacter(string name)
+    {
+        this.curCharData = new CharacterData
+        {
+            Name = name,
+            Items = new List<WeaponStats>()
+        };
+
+    }
+
+    public string GetCurrentCharacterName()
+    {
+        if (curCharData != null)
+        {
+            return curCharData.Name;
+        }
+        else
+        {
+            return "";
+        }
     }
 }

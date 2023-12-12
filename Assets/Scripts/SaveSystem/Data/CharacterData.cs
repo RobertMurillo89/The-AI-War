@@ -10,10 +10,12 @@ using UnityEngine;
 public class CharacterData
 {
     public List<WeaponStats> Items;
+    public string Name;
 
     public CharacterData()
     {
         Items = new List<WeaponStats>();
+        
     }
 
 }
