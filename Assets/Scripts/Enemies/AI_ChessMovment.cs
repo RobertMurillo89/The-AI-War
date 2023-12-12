@@ -23,13 +23,15 @@ public class AI_Chess : EnemyAI
     int ticks;
     int DiceRoll = Random.Range(0, 2);
     bool randomBool;
+    [SerializeField] enum MoveType { ROOK = 1, Bishop, Queen }
+    
 
     // Update is called once per frame
     // Start is called before the first frame update
     //void Start()
     //{
 
-        //ticks = moveTicks;
+    //ticks = moveTicks;
     //}
 
 
@@ -44,20 +46,20 @@ public class AI_Chess : EnemyAI
         {
             if (iCantMove)
             {
+                foundOtherWall = false;
                 transform.Translate(Direction * movement * Time.deltaTime);
                 ticks--;
             }
             else
             {
-                if (!foundOtherWall)
-                {
-                transform.Translate(otherDirection * movement * Time.deltaTime);
-                }
+                if (!foundOtherWall) transform.Translate(otherDirection * movement * Time.deltaTime);
                 else
                 {
                    Direction = retreat;
-                    ticks = 20;
+                    ticks = 100;
                     foundOtherWall = false;
+                    transform.Translate(Direction * movement * Time.deltaTime);
+                    ticks--;
                 }
                 //foundOtherWall = true;
                 //canIMove.offset = otherCheackBox;
@@ -71,7 +73,8 @@ public class AI_Chess : EnemyAI
         else
         {
             ticks = moveTicks;
-            Direction = SetDirection();
+
+            Direction = SetDirectionQueen();
         }
     }
 
@@ -81,7 +84,7 @@ public class AI_Chess : EnemyAI
     }
 
 
-    Vector3 SetDirection()
+    Vector3 SetDirectionQueen()
     {
         Vector3 VDirection = Vector3.zero;
         //transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, Speed * Time.deltaTime);
@@ -97,13 +100,13 @@ public class AI_Chess : EnemyAI
             {
                 otherDirection = new Vector3(0, 1, 0).normalized;
                 otherCheackBox = new Vector2(0, 1);
-                retreat = new Vector3(1, -1, 0).normalized;
+                retreat = new Vector3(-1, -1, 0).normalized;
             }
             else
             {
                 otherDirection = new Vector3(0, -1, 0).normalized;
                 otherCheackBox = new Vector2(0, -1);
-                retreat = new Vector3(1, 1, 0).normalized;
+                retreat = new Vector3(-1, 1, 0).normalized;
             }
         }
         else if (angle >= 22.5f && angle < 67.5f)
@@ -114,13 +117,13 @@ public class AI_Chess : EnemyAI
             {
                 otherDirection = new Vector3(-1, 1, 0).normalized;
                 otherCheackBox = new Vector2(-1, 1);
-                retreat = new Vector3(1, 0, 0).normalized;
+                retreat = new Vector3(0, -1, 0).normalized;
             }
             else
             {
                 otherDirection = new Vector3(1, -1, 0).normalized;
                 otherCheackBox = new Vector2(1, -1);
-                retreat = new Vector3(0, 1, 0).normalized;
+                retreat = new Vector3(-1, 0, 0).normalized;
             }
         }
         else if (angle >= 67.5f && angle < 112.5f)
@@ -131,13 +134,13 @@ public class AI_Chess : EnemyAI
             {
                 otherDirection = new Vector3(-1, 0, 0).normalized;
                 otherCheackBox = new Vector2(-1, 0);
-                retreat = new Vector3(1, 1, 0).normalized;
+                retreat = new Vector3(1, -1, 0).normalized;
             }
             else
             {
                 otherDirection = new Vector3(1, 0, 0).normalized;
                 otherCheackBox = new Vector2(1, 0);
-                retreat = new Vector3(-1, 1, 0).normalized;
+                retreat = new Vector3(-1, -1, 0).normalized;
             }
         }
         else if (angle >= 112.5f && angle < 157.5f)
@@ -148,13 +151,13 @@ public class AI_Chess : EnemyAI
             {
                 otherDirection = new Vector3(-1, -1, 0).normalized;
                 otherCheackBox = new Vector2(-1, -1);
-                retreat = new Vector3(0, 1, 0).normalized;
+                retreat = new Vector3(1, 0, 0).normalized;
             }
             else
             {
                 otherDirection = new Vector3(1, 1, 0).normalized;
                 otherCheackBox = new Vector2(1, 1);
-                retreat = new Vector3(-1, 0, 0).normalized;
+                retreat = new Vector3(0, -1, 0).normalized;
             }
         }
         else if (angle >= 157.5f || angle < -157.5f)
@@ -165,13 +168,13 @@ public class AI_Chess : EnemyAI
             {
                 otherDirection = new Vector3(0, 1, 0).normalized;
                 otherCheackBox = new Vector2(0, 1);
-                retreat = new Vector3(1, 1, 0).normalized;
+                retreat = new Vector3(1, -1, 0).normalized;
             }
             else
             {
                 otherDirection = new Vector3(0, -1, 0).normalized;
                 otherCheackBox = new Vector2(0, -1);
-                retreat = new Vector3(1, -1, 0).normalized;
+                retreat = new Vector3(1, 1, 0).normalized;
             }
         }
         else if (angle >= -157.5f && angle < -112.5f)
@@ -182,13 +185,13 @@ public class AI_Chess : EnemyAI
             {
                 otherDirection = new Vector3(-1, 1, 0).normalized;
                 otherCheackBox = new Vector2(-1, 1);
-                retreat = new Vector3(-1, 0, 0).normalized;
+                retreat = new Vector3(1, 0, 0).normalized;
             }
             else
             {
                 otherDirection = new Vector3(1, -1, 0).normalized;
                 otherCheackBox = new Vector2(1, -1);
-                retreat = new Vector3(0, -1, 0).normalized;
+                retreat = new Vector3(0, 1, 0).normalized;
             }
         }
         else if (angle >= -112.5f && angle < -67.5f)
@@ -199,13 +202,13 @@ public class AI_Chess : EnemyAI
             {
                 otherDirection = new Vector3(-1, 0, 0).normalized;
                 otherCheackBox = new Vector2(-1, 0);
-                retreat = new Vector3(-1, -1, 0).normalized;
+                retreat = new Vector3(1, 1, 0).normalized;
             }
             else
             {
                 otherDirection = new Vector3(1, -0, 0).normalized;
                 otherCheackBox = new Vector2(1, -0);
-                retreat = new Vector3(1, -1, 0).normalized;
+                retreat = new Vector3(-1, 1, 0).normalized;
             }
         }
         else if (angle >= -67.5f && angle < -22.5f)
@@ -216,13 +219,13 @@ public class AI_Chess : EnemyAI
             {
                 otherDirection = new Vector3(1, 1, 0).normalized;
                 otherCheackBox = new Vector2(1, 1);
-                retreat = new Vector3(1, 0, 0).normalized;
+                retreat = new Vector3(-1, 0, 0).normalized;
             }
             else
             {
                 otherDirection = new Vector3(-1, -1, 0).normalized;
                 otherCheackBox = new Vector2(-1, -1);
-                retreat = new Vector3(0, -1, 0).normalized;
+                retreat = new Vector3(0, 1, 0).normalized;
             }
         }
         canIMove.offset = DirectionCheackBox;
