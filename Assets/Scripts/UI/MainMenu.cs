@@ -26,6 +26,7 @@ public class MainMenu : MonoBehaviour
     public CharacterData characterData;
     public TMP_Text characterNameText;
     public GameObject characterCreationOptions;
+    [SerializeField] private Button playButton;
 
     private float masterVolume, musicVolume, ambiVolume, sfxVolume;
     private bool isMasterMuted, isMusicMuted, isAmbiMuted, isSFXMuted;
@@ -42,7 +43,7 @@ public class MainMenu : MonoBehaviour
     {
         if (!SaveManager.Instance.HasCharData())
         {
-            
+            playButton.interactable = false;
         }
         UpdateInitialVolumes();
         PlayMusic(MusicSource, MainMenuMusic);
@@ -77,9 +78,10 @@ public class MainMenu : MonoBehaviour
 
         characterCreationOptions.gameObject.SetActive(false);
         selectCharacterOptions.gameObject.SetActive(true);
+        playButton.interactable = true;
 
-        
-      
+
+
     }
 
     public void SelectCharacterAndReturnToMenu()

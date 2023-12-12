@@ -13,6 +13,10 @@ using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
+
+    [Header("Debugging")]
+    [SerializeField] private bool initilaizeDataIfNull = false;
+
     [Header("File Storage Config")]
     [SerializeField] private string fileName;
     [SerializeField] private bool useEncryption;
@@ -100,6 +104,11 @@ public class SaveManager : MonoBehaviour
     {
 
         this.curCharData = serializer.Load();
+
+        if(this.curCharData == null && initilaizeDataIfNull)
+        {
+            NewCharacter("Dummy");
+        }
 
         if (this.curCharData == null)
         {

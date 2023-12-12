@@ -5823,6 +5823,7 @@ MonoBehaviour:
     Name: 
   characterNameText: {fileID: 293815050}
   characterCreationOptions: {fileID: 1054353566}
+  playButton: {fileID: 2013316352}
 --- !u!82 &1238423711 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 8257322715224373625, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
@@ -9373,8 +9374,8 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1345722422}
+  - {fileID: 7798739364108598348}
   - {fileID: 519420032}
   - {fileID: 1202012932}
   - {fileID: 1688718506}
-  - {fileID: 7798739364108598348}
-  - {fileID: 1345722422}
