@@ -11,23 +11,26 @@ public class AI_Chess : EnemyAI
     Vector3 otherDirection;
     Vector3 retreat;
     Vector2 otherCheackBox;
+
     bool isMoving;
     [SerializeField] int movement;
     [SerializeField] int moveTicks;
     [SerializeField] BoxCollider2D canIMove;
-    [SerializeField] BoxCollider2D otherChecker;
+    [SerializeField] GameObject otherChecker;
+    //[SerializeField] BoxCollider2D otherChecker;
     bool iCantMove = true;
     bool foundOtherWall;
     int ticks;
-    int DiceRoll;
+    int DiceRoll = Random.Range(0, 2);
     bool randomBool;
 
     // Update is called once per frame
     // Start is called before the first frame update
-    void Start()
-    {
+    //void Start()
+    //{
+
         //ticks = moveTicks;
-    }
+    //}
 
 
     // Update is called once per frame
@@ -46,15 +49,23 @@ public class AI_Chess : EnemyAI
             }
             else
             {
-                canIMove.offset = otherCheackBox;
+                if (!foundOtherWall)
+                {
                 transform.Translate(otherDirection * movement * Time.deltaTime);
+                }
+                else
+                {
+                   Direction = retreat;
+                    ticks = 20;
+                    foundOtherWall = false;
+                }
+                //foundOtherWall = true;
+                //canIMove.offset = otherCheackBox;
                //if
                // {
-                   //Direction = retreat;
-                    //ticks = 5;
                     //transform.Translate(Direction * movement * Time.deltaTime);
                 //}
-                canIMove.offset = DirectionCheackBox;
+                //canIMove.offset = DirectionCheackBox;
             }
         }
         else
@@ -63,10 +74,19 @@ public class AI_Chess : EnemyAI
             Direction = SetDirection();
         }
     }
+
+    public void Retreat()
+    {
+        foundOtherWall = true;
+    }
+
+
     Vector3 SetDirection()
     {
         Vector3 VDirection = Vector3.zero;
-        Vector2 direction = player.position - transform.position;
+        //transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, Speed * Time.deltaTime);
+        Vector2 direction = playerTransform.position - transform.position;
+
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         DiceRoll = Random.Range(0, 2);
         if (angle >= -22.5f && angle < 22.5f)
@@ -206,7 +226,7 @@ public class AI_Chess : EnemyAI
             }
         }
         canIMove.offset = DirectionCheackBox;
-
+        otherChecker.GetComponent<BoxCollider2D>().offset = otherCheackBox;
         // Default direction if no angle condition is met
         return VDirection;
     }

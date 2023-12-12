@@ -30,6 +30,8 @@ public class EnemyAI : MonoBehaviour, IDamage, IEnemy
         }
     }
 
+
+
     // Update is called once per frame
     protected virtual void Update()
     {
