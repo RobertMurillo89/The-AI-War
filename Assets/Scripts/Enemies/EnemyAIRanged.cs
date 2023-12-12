@@ -13,11 +13,21 @@ public class EnemyAIRanged : EnemyAIMelee
     protected override void MoveTowardsPlayer()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
-
+        Vector2 currentPosition = transform.position;
+        Vector2 targetPosition = playerTransform.position;
         // Move towards the player if outside stopDistance
         if (distanceToPlayer > stopDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, Speed * Time.deltaTime);
+        }
+        Vector2 movementDirection = targetPosition - currentPosition;
+        if (movementDirection.x < 0)
+        {
+            sprite.flipX = false; // Flip the sprite when moving left
+        }
+        else if (movementDirection.x > 0)
+        {
+            sprite.flipX = true; // Unflip the sprite when moving right
         }
     }
     private bool IsPlayerInRange()

@@ -158,7 +158,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.7, y: 27.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5546016213346926895}
@@ -206,7 +206,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e690d1a85e91a0840b9dc18a05a65b48, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b91b7703d6603434b9fd566ab29b9696, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -298,6 +298,7 @@ MonoBehaviour:
   AttackCooldown: 1
   EmoteSource: {fileID: 7287002122702279038}
   WeaponSource: {fileID: 2131707766111926006}
+  sprite: {fileID: 5441816848568595202}
   projectilePrefab: {fileID: 8166009279119162858, guid: a317fabffc3bd104aa5c3339f15dcbb4, type: 3}
   ProjectileSpeed: 20
   projectileSpawnPoint: {fileID: 7210407824941064862}

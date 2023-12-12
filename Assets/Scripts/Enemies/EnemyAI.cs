@@ -17,6 +17,7 @@ public class EnemyAI : MonoBehaviour, IDamage, IEnemy
 
     [Header("-------Components-------")]
     public AudioSource EmoteSource, WeaponSource;
+    public SpriteRenderer sprite;
 
     protected Transform playerTransform;
 
@@ -44,8 +45,20 @@ public class EnemyAI : MonoBehaviour, IDamage, IEnemy
 
     protected virtual void MoveTowardsPlayer()
     {
+        Vector2 currentPosition = transform.position;
+        Vector2 targetPosition = playerTransform.position;
         // Move towards the player's position
         transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, Speed * Time.deltaTime);
+        // Flip the sprite based on movement direction
+        Vector2 movementDirection = targetPosition - currentPosition;
+        if(movementDirection.x < 0)
+        {
+            sprite.flipX = false;
+        }
+        else if (movementDirection.x > 0) 
+        {
+            sprite.flipX = true;
+        }
     }
     
     protected virtual void PerformAction()

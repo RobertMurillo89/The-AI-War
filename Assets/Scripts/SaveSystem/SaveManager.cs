@@ -28,6 +28,8 @@ public class SaveManager : MonoBehaviour
     private float lastSaveTime = -Mathf.Infinity;
     private List<ISaver> thingsToSave;
 
+    private string selectedProfileId = "test";
+
     #region Singleton
     private void Awake()
     {
@@ -97,13 +99,13 @@ public class SaveManager : MonoBehaviour
 
         Debug.Log("GameSaved");
 
-        serializer.Save(curCharData);
+        serializer.Save(curCharData, selectedProfileId);
     }
 
     public void LoadCharacterData()
     {
 
-        this.curCharData = serializer.Load();
+        this.curCharData = serializer.Load(selectedProfileId);
 
         if(this.curCharData == null && initilaizeDataIfNull)
         {
