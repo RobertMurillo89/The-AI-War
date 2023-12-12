@@ -17,14 +17,15 @@ public class AI_Chess : EnemyAI
     [SerializeField] int moveTicks;
     [SerializeField] BoxCollider2D canIMove;
     [SerializeField] GameObject otherChecker;
-    //[SerializeField] BoxCollider2D otherChecker;
+    //[SerializeField] Boxinllider2D otherChecker;
+    [SerializeField] byte typeOfMove; 
     bool iCantMove = true;
     bool foundOtherWall;
     int ticks;
-    int DiceRoll = Random.Range(0, 2);
+    int DiceRoll;
     bool randomBool;
-    [SerializeField] enum MoveType { ROOK = 1, Bishop, Queen }
-    
+    public enum MoveType { Rook = 1, Bishop, Queen }
+
 
     // Update is called once per frame
     // Start is called before the first frame update
@@ -55,7 +56,7 @@ public class AI_Chess : EnemyAI
                 if (!foundOtherWall) transform.Translate(otherDirection * movement * Time.deltaTime);
                 else
                 {
-                   Direction = retreat;
+                    Direction = retreat;
                     ticks = 100;
                     foundOtherWall = false;
                     transform.Translate(Direction * movement * Time.deltaTime);
@@ -63,9 +64,9 @@ public class AI_Chess : EnemyAI
                 }
                 //foundOtherWall = true;
                 //canIMove.offset = otherCheackBox;
-               //if
-               // {
-                    //transform.Translate(Direction * movement * Time.deltaTime);
+                //if
+                // {
+                //transform.Translate(Direction * movement * Time.deltaTime);
                 //}
                 //canIMove.offset = DirectionCheackBox;
             }
@@ -73,7 +74,15 @@ public class AI_Chess : EnemyAI
         else
         {
             ticks = moveTicks;
-
+            switch (typeOfMove)
+            {
+                case 1:
+                    break;
+                    case 2:
+                    break;
+                default:
+                    break;
+            }
             Direction = SetDirectionQueen();
         }
     }
@@ -82,8 +91,162 @@ public class AI_Chess : EnemyAI
     {
         foundOtherWall = true;
     }
+    //void findPlayerAngle()
+    //{
 
-
+    //}
+    Vector3 SetDirectionRook()
+    {
+        Vector3 VDirection = Vector3.zero;
+        Vector2 direction = playerTransform.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        DiceRoll = Random.Range(0, 2);
+        if (angle >= -45f && angle < 45f)
+        {
+            VDirection = new Vector3(1, 0, 0).normalized;
+            DirectionCheackBox = new Vector2(1, 0);
+            if (DiceRoll == 1)
+            {
+                otherDirection = new Vector3(0, 1, 0).normalized;
+                otherCheackBox = new Vector2(0, 1);
+                retreat = new Vector3(-1, -1, 0).normalized;
+            }
+            else
+            {
+                otherDirection = new Vector3(0, -1, 0).normalized;
+                otherCheackBox = new Vector2(0, -1);
+                retreat = new Vector3(-1, 1, 0).normalized;
+            }
+        }
+        else if (angle >= 45f && angle < 135f)
+        {
+            VDirection = new Vector3(0, 1, 0).normalized;
+            DirectionCheackBox = new Vector2(0, 1);
+            if (DiceRoll == 1)
+            {
+                otherDirection = new Vector3(-1, 0, 0).normalized;
+                otherCheackBox = new Vector2(-1, 0);
+                retreat = new Vector3(1, -1, 0).normalized;
+            }
+            else
+            {
+                otherDirection = new Vector3(1, 0, 0).normalized;
+                otherCheackBox = new Vector2(1, 0);
+                retreat = new Vector3(-1, -1, 0).normalized;
+            }
+        }
+        else if (angle >= 135f || angle < -135f)
+        {
+            VDirection = new Vector3(-1, 0, 0).normalized;
+            DirectionCheackBox = new Vector2(-1, 0);
+            if (DiceRoll == 1)
+            {
+                otherDirection = new Vector3(0, 1, 0).normalized;
+                otherCheackBox = new Vector2(0, 1);
+                retreat = new Vector3(1, -1, 0).normalized;
+            }
+            else
+            {
+                otherDirection = new Vector3(0, -1, 0).normalized;
+                otherCheackBox = new Vector2(0, -1);
+                retreat = new Vector3(1, 1, 0).normalized;
+            }
+        }
+        else if (angle >= -135f && angle < -45f)
+        {
+            VDirection = new Vector3(0, -1, 0).normalized;
+            DirectionCheackBox = new Vector2(0, -1);
+            if (DiceRoll == 1)
+            {
+                otherDirection = new Vector3(-1, 0, 0).normalized;
+                otherCheackBox = new Vector2(-1, 0);
+                retreat = new Vector3(1, 1, 0).normalized;
+            }
+            else
+            {
+                otherDirection = new Vector3(1, -0, 0).normalized;
+                otherCheackBox = new Vector2(1, -0);
+                retreat = new Vector3(-1, 1, 0).normalized;
+            }
+        }
+        return VDirection;
+    }
+    Vector3 SetDirectionBishop()
+    {
+        Vector3 VDirection = Vector3.zero;
+        Vector2 direction = playerTransform.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        DiceRoll = Random.Range(0, 2);
+        if (angle >= 0f && angle < 90f)
+        {
+            VDirection = new Vector3(1, 1, 0).normalized;
+            DirectionCheackBox = new Vector2(1, 1);
+            if (DiceRoll == 1)
+            {
+                otherDirection = new Vector3(-1, 1, 0).normalized;
+                otherCheackBox = new Vector2(-1, 1);
+                retreat = new Vector3(0, -1, 0).normalized;
+            }
+            else
+            {
+                otherDirection = new Vector3(1, -1, 0).normalized;
+                otherCheackBox = new Vector2(1, -1);
+                retreat = new Vector3(-1, 0, 0).normalized;
+            }
+        }
+        else if (angle >= 90f && angle < 180f)
+        {
+            VDirection = new Vector3(-1, 1, 0).normalized;
+            DirectionCheackBox = new Vector2(-1, 1);
+            if (DiceRoll == 1)
+            {
+                otherDirection = new Vector3(-1, -1, 0).normalized;
+                otherCheackBox = new Vector2(-1, -1);
+                retreat = new Vector3(1, 0, 0).normalized;
+            }
+            else
+            {
+                otherDirection = new Vector3(1, 1, 0).normalized;
+                otherCheackBox = new Vector2(1, 1);
+                retreat = new Vector3(0, -1, 0).normalized;
+            }
+        }
+        else if (angle >= -180f && angle < -90f)
+        {
+            VDirection = new Vector3(-1, -1, 0).normalized;
+            DirectionCheackBox = new Vector2(-1, -1);
+            if (DiceRoll == 1)
+            {
+                otherDirection = new Vector3(-1, 1, 0).normalized;
+                otherCheackBox = new Vector2(-1, 1);
+                retreat = new Vector3(1, 0, 0).normalized;
+            }
+            else
+            {
+                otherDirection = new Vector3(1, -1, 0).normalized;
+                otherCheackBox = new Vector2(1, -1);
+                retreat = new Vector3(0, 1, 0).normalized;
+            }
+        }
+        else if (angle >= -90f && angle < 0f)
+        {
+            VDirection = new Vector3(1, -1, 0).normalized;
+            DirectionCheackBox = new Vector2(1, -1);
+            if (DiceRoll == 1)
+            {
+                otherDirection = new Vector3(1, 1, 0).normalized;
+                otherCheackBox = new Vector2(1, 1);
+                retreat = new Vector3(-1, 0, 0).normalized;
+            }
+            else
+            {
+                otherDirection = new Vector3(-1, -1, 0).normalized;
+                otherCheackBox = new Vector2(-1, -1);
+                retreat = new Vector3(0, 1, 0).normalized;
+            }
+        }
+        return VDirection;
+    }
     Vector3 SetDirectionQueen()
     {
         Vector3 VDirection = Vector3.zero;
