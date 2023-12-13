@@ -76,14 +76,16 @@ public class AI_Chess : EnemyAI
             ticks = moveTicks;
             switch (typeOfMove)
             {
-                case 1:
+                case 0:
+            Direction = SetDirectionRook();
                     break;
-                    case 2:
+                    case 1:
+            Direction = SetDirectionBishop();
                     break;
                 default:
+            Direction = SetDirectionQueen();
                     break;
             }
-            Direction = SetDirectionQueen();
         }
     }
 

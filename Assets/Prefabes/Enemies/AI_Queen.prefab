@@ -110,11 +110,13 @@ MonoBehaviour:
   AttackCooldown: 0
   EmoteSource: {fileID: 2406764192115508453}
   WeaponSource: {fileID: 0}
+  sprite: {fileID: 0}
   player: {fileID: 0}
   movement: 5
   moveTicks: 200
   canIMove: {fileID: 7739060383865595899}
   otherChecker: {fileID: 8949410908272387659}
+  typeOfMove: 3
 --- !u!50 &53486878209074648
 Rigidbody2D:
   serializedVersion: 4
