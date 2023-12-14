@@ -1,54 +1,56 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.PackageManager.Requests;
-using UnityEditor.PackageManager.UI;
-using UnityEditor.PackageManager;
 using UnityEngine;
-using static UnityEditor.Progress;
-using System.IO;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using System;
 
-public class SaveManager : MonoBehaviour
+public class SaveManager : SingletonMonoBehaviour<SaveManager>
 {
-
+    // Debugging Tool, If true, data will initialize if null.Remove from final build
     [Header("Debugging")]
     [SerializeField] private bool initilaizeDataIfNull = false;
 
     [Header("File Storage Config")]
+    // Serialized field for file name configuration
     [SerializeField] private string fileName;
+    // Serialized field to determine whether to use encryption
     [SerializeField] private bool useEncryption;
-    private DataSerializer serializer;
 
-    public static SaveManager Instance;
-    private CharacterData curCharData;
-    private float saveCooldown = 2f;
+    [Header("Save Cooldown")]
+    // Cooldown duration for saving data
+    [SerializeField] float saveCooldown = 2f;
+    // Time since last save initialized to negative infinity
     private float lastSaveTime = -Mathf.Infinity;
-    private List<ISaver> thingsToSave;
 
+    [Header("Data Management")]
+    // Private field for a DataSerializer object
+    private DataSerializer serializer;
+    // Private field to store current character data
+    private CharacterData curCharData;
+    // String to store the selected profile ID
     private string selectedProfileId = "";
 
-    #region Singleton
-    private void Awake()
+    [Header("Savable Objects")]
+    // List of objects implementing ISaver interface to be saved
+    private List<ISaver> thingsToSave;
+
+    protected override void Awake()
     {
-        if (Instance == null)
+        try
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            this.serializer = new DataSerializer(Application.persistentDataPath, fileName, useEncryption);
         }
-        else if (Instance != this)
+        catch (Exception ex)
         {
-            Destroy(gameObject);
-            return;
+            CustomLogger.LogError("Error initializing DataSerializer: " + ex.Message);
+            // Handle the initialization failure, maybe disable save/load features
         }
-
-        this.serializer = new DataSerializer(Application.persistentDataPath, fileName, useEncryption);
-
     }
-    #endregion
 
+
+    #region Scene Load/Unload
+    // Subscribe/unscubscribe to the sceneLoaded/Unloaded event
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -63,80 +65,115 @@ public class SaveManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // Find all items to save in the loaded scene
         this.thingsToSave = FindAllItemsToSave();
+        // Load character data for the selected profile
         LoadCharacterData(selectedProfileId);
     }
 
     public void OnSceneUnloaded(Scene scene)
     {
-        SaveDataAsync();
+        // save called when a scene is unloaded. This waits for thread to finish before leaving scene.
+        SaveDataAsync().GetAwaiter().GetResult();
     }
+    #endregion
 
     public void RequestSave()
     {
-
+        // Check if enough time has passed since the last save
         if (Time.time - lastSaveTime > saveCooldown)
         {
+            // Update the last save time to current time
             lastSaveTime = Time.time;
-            SaveDataAsync();
+            var _ = SaveDataAsync(); // Asynchronously saving without awaiting
         }
 
     }
 
-    private void SaveDataAsync()
+    public async Task SaveDataAsync()
     {
-
+        // If current character data is null
         if (this.curCharData == null)
         {
-            Debug.LogWarning("No data found, new game must be started before data can be saved");
+            CustomLogger.LogWarning("No data found, new game must be started before data can be saved");
             return;
         }
-
-        foreach (ISaver thingToSave in thingsToSave)
+        // Perform the save operation asynchronously
+        await Task.Run(() =>
         {
-            thingToSave.SaveData(ref curCharData);
-        }
+            // Iterate over each object to be saved
+            foreach (ISaver thingToSave in thingsToSave)
+            {
+                // Call SaveData method on each object, passing the current character data by reference
+                thingToSave.SaveData(ref curCharData);
+            }
+            // Call the serializer's save method with current character data and selected profile ID
+            serializer.Save(curCharData, selectedProfileId);
+        });
 
-        Debug.Log("GameSaved");
+        CustomLogger.Log("GameSaved");
 
-        serializer.Save(curCharData, selectedProfileId);
     }
+
 
     public void LoadCharacterData(string profileID)
     {
-
-        this.curCharData = serializer.Load(selectedProfileId);
-
-        if(this.curCharData == null && initilaizeDataIfNull)
+        try
         {
-            NewCharacter("Dummy");
+            // Load character data using the serializer
+            this.curCharData = serializer.Load(selectedProfileId);
+            // Rest of the code...
         }
+        catch (Exception ex)
+        {
+            CustomLogger.LogError("Error loading character data: " + ex.Message);
+            // Handle loading failure
+        }
+
+        // If loaded data is null and initialization is allowed
+        if (this.curCharData == null && initilaizeDataIfNull)
+            {
+                // Create a new character with a dummy name
+                NewCharacter("Dummy");
+            }
 
         if (this.curCharData == null)
-        {
-            Debug.Log(":No data was found. A new game must be started before data can be loaded.");
-            return;
-        }
+            {
+                // If loaded data is still null
+                CustomLogger.Log(":No data was found. A new game must be started before data can be loaded.");
+                return;
+            }
 
+        // Iterate over each object to be loaded
         foreach (ISaver thingToSave in thingsToSave)
-        {
+            {
+            // Call LoadData method on each object with current character data
             thingToSave.LoadData(curCharData);
-        }
+            }
 
-        Debug.Log("GameLoaded");
+        CustomLogger.Log("GameLoaded");
     }
 
     private List<ISaver> FindAllItemsToSave()
     {
-        IEnumerable<ISaver> itemsToSave = FindObjectsOfType<MonoBehaviour>().OfType<ISaver>();
-
-        return new List<ISaver>(itemsToSave);
+        try
+        {
+            // Find all MonoBehaviour objects that implement ISaver interface
+            IEnumerable<ISaver> itemsToSave = FindObjectsOfType<MonoBehaviour>().OfType<ISaver>();
+            // Return a list of these objects
+            return new List<ISaver>(itemsToSave);
+        }
+        catch (Exception ex)
+        {
+            CustomLogger.LogError("Error finding items to save: " + ex.Message);
+            return new List<ISaver>(); // Return an empty list or handle accordingly
+        }
     }
 
 
     public void NewCharacter(string name)
     {
-        // Assuming curCharData is a field of type CharacterData
+        // Instantiate a new CharacterData object
         this.curCharData = new CharacterData
         {
             Name = name,
@@ -145,10 +182,11 @@ public class SaveManager : MonoBehaviour
         };
 
         // Save the new character data under the new profile ID
-        SaveDataAsync();
+        var _ = SaveDataAsync(); // Asynchronously saving without awaiting
 
     }
 
+    // Public method to get the current character's name
     public string GetCurrentCharacterName()
     {
         if (curCharData != null)
@@ -161,19 +199,17 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    public bool IsProfileNameUnique(string profileName)
-    {
-        var allProfiles = GetAllProfileGameData();
-        return !allProfiles.ContainsKey(profileName);
-    }
-
+    // Public method to check if character data exists
     public bool HasCharData()
     {
+        // Return true if current character data is not null
         return curCharData != null;
     }
 
+    // Public method to get all profile game data
     public Dictionary<string, CharacterData> GetAllProfileGameData()
     {
+        // Return all profiles using the serializer's LoadAllProfiles method
         return serializer.LoadAllProfiles();
     }
 }

@@ -104,18 +104,17 @@ public class MainMenu : MonoBehaviour
     private void EnableCheckButton()
     {
         string inputName = NameInputField.text;
-        bool isNameUnique = SaveManager.Instance.IsProfileNameUnique(inputName);
+        string name = SaveManager.Instance.GetCurrentCharacterName();
 
         // Enable the check button if there's text and it's a unique name
-        checkButton.gameObject.SetActive(inputName.Length > 0 && isNameUnique);
+        checkButton.gameObject.SetActive(inputName.Length > 0 && name != inputName);
 
         // Optionally, provide immediate feedback if the name is not unique
-        if (inputName.Length > 0 && !isNameUnique)
+        if (inputName.Length > 0 && name == inputName)
         {
             // Update UI to show that the name is not unique
             // e.g., a warning text, change the color of the input field, etc.
         }
-
     }
     public void CreateCharacter()
     {
