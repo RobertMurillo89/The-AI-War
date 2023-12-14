@@ -4,7 +4,7 @@ using UnityEngine;
 public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
 {
     // Lazy-loaded, thread-safe singleton instance
-    private static Lazy<T> _instance = new Lazy<T>(CreateSingletonInstance, true);
+    private static readonly Lazy<T> _instance = new(CreateSingletonInstance, true);
 
     // Public property to access the singleton instance
     public static T Instance
@@ -25,7 +25,7 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
             if (instance == null)
             {
                 // If an instance doesn't already exist in the scene
-                GameObject obj = new GameObject(typeof(T).Name);
+                GameObject obj = new(typeof(T).Name);
                 instance = obj.AddComponent<T>();
                 // Create a new GameObject and add the component
             }

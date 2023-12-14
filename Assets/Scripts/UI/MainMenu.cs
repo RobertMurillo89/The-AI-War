@@ -128,13 +128,10 @@ public class MainMenu : MonoBehaviour
         SaveManager.Instance.NewCharacter(newCharacterName);
         SaveManager.Instance.RequestSave();
 
-        // Update the main menu with the selected profile ID
-        SetSelectedProfileId(newProfileId);
-
         // Deactivate the creation options and show the select character options
         characterCreationOptions.gameObject.SetActive(false);
         selectCharacterOptions.gameObject.SetActive(true);
-
+        UpdateCharacterNameOnUI();
         // Update the save slots to include the new character
         //saveSlotsMenu.UpdateSaveSlots();
     }
@@ -142,28 +139,31 @@ public class MainMenu : MonoBehaviour
     public void SetSelectedProfileId(string id)
     {
         selectedProfileId = id;
+        CustomLogger.Log("Selected Profile ID: " + selectedProfileId); // Log for debugging
+
     }
 
     public void SelectCharacterAndReturnToMenu()
     {
-
         // Load the selected character data
         if (!string.IsNullOrEmpty(this.selectedProfileId))
         {
             saveSlotsMenu.ActivateMenu();
+            SaveManager.Instance.SetSelectedProfile(this.selectedProfileId);
             SaveManager.Instance.LoadCharacterData(this.selectedProfileId);
             UpdateCharacterNameOnUI();
+        }
+        else
+        {
+            CustomLogger.Log("wtf");
         }
 
         characterCreationPanel.gameObject.SetActive(false);
         mainMenuPanel.gameObject.SetActive(true);
 
         characterNameText.text = SaveManager.Instance.GetCurrentCharacterName();
-        UpdateCharacterNameOnUI();
 
         playButton.interactable = true;
-
-
     }
 
     public void SwitchCharacter()
@@ -178,6 +178,8 @@ public class MainMenu : MonoBehaviour
             newCharPanel.SetActive(true);
             selectCharPanel.SetActive(false);
         }
+
+        UpdateCharacterNameOnUI();
     }
 
     private void UpdateCharacterNameOnUI()

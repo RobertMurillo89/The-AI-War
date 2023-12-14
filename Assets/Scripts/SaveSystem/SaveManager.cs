@@ -73,8 +73,8 @@ public class SaveManager : SingletonMonoBehaviour<SaveManager>
 
     public void OnSceneUnloaded(Scene scene)
     {
-        // save called when a scene is unloaded. This waits for thread to finish before leaving scene.
-        SaveDataAsync().GetAwaiter().GetResult();
+        // save called when a scene is unloaded.
+        _ = SaveDataAsync();
     }
     #endregion
 
@@ -115,13 +115,14 @@ public class SaveManager : SingletonMonoBehaviour<SaveManager>
 
     }
 
-
     public void LoadCharacterData(string profileID)
     {
+        CustomLogger.Log("Loading Character Data for profile: " + profileID);
+
         try
         {
             // Load character data using the serializer
-            this.curCharData = serializer.Load(selectedProfileId);
+            this.curCharData = serializer.Load(profileID);
             // Rest of the code...
         }
         catch (Exception ex)
@@ -170,7 +171,6 @@ public class SaveManager : SingletonMonoBehaviour<SaveManager>
         }
     }
 
-
     public void NewCharacter(string name)
     {
         // Instantiate a new CharacterData object
@@ -195,6 +195,7 @@ public class SaveManager : SingletonMonoBehaviour<SaveManager>
         }
         else
         {
+            CustomLogger.Log("could not find char name");
             return "";
         }
     }
@@ -211,5 +212,10 @@ public class SaveManager : SingletonMonoBehaviour<SaveManager>
     {
         // Return all profiles using the serializer's LoadAllProfiles method
         return serializer.LoadAllProfiles();
+    }
+
+    public void SetSelectedProfile(string profileID)
+    {
+        selectedProfileId = profileID;
     }
 }
