@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Profiling;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -15,8 +16,11 @@ public class MainMenu : MonoBehaviour
     public AudioSource MusicSource, AmbianceSource, SFXSource;
     public Slider MasterSlider, MusicSlider, AmbiSlider, SFXSlider;
     public AudioClip[] MainMenuMusic, MainMenuAmbi;
+    private float masterVolume, musicVolume, ambiVolume, sfxVolume;
+    private bool isMasterMuted, isMusicMuted, isAmbiMuted, isSFXMuted;
 
     [Header("-----Charcter Creation-----")]
+    [SerializeField] private SaveSlotsMenu saveSlotsMenu;
     public Button createCharacterButton;
     public TMP_InputField NameInputField;
     public Button checkButton;  
@@ -27,34 +31,67 @@ public class MainMenu : MonoBehaviour
     public TMP_Text characterNameText;
     public GameObject characterCreationOptions;
     [SerializeField] private Button playButton;
+    public GameObject newCharPanel;
+    public GameObject selectCharPanel;
 
-    private float masterVolume, musicVolume, ambiVolume, sfxVolume;
-    private bool isMasterMuted, isMusicMuted, isAmbiMuted, isSFXMuted;
+    private string selectedProfileId;
 
+    public static MainMenu Instance;
     private void Awake()
     {
-        NameInputField.gameObject.SetActive(false);
+        Instance = this;
+        // Ensures inputfield for Char Creation is not empty
         checkButton.gameObject.SetActive(false);
-
         NameInputField.onValueChanged.AddListener(delegate { EnableCheckButton(); });
-
     }
     private void Start()
     {
+        // Disables Play button if no Char data loaded. 
         if (!SaveManager.Instance.HasCharData())
         {
             playButton.interactable = false;
         }
+        else
+        {
+            // Shows which char is active on mm ui.
+            UpdateCharacterNameOnUI();
+        }
+        //Handles audio
         UpdateInitialVolumes();
         PlayMusic(MusicSource, MainMenuMusic);
-        UpdateCharacterNameOnUI();
+
+        
 
     }
 
     #region ButtonFunctions
+
+    //Play button function loads next scene if character data loaded.
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(1);       
+    }
+
+    // Handles the logic for displaying the appropriate character menu based on the presence of saved char data
+    public void SelectCharacterMenu()
+    {
+        // Update and populate the save slots menu with the latest data
+        saveSlotsMenu.ActivateMenu();
+
+        // Check if there is any saved character data available
+        if (SaveManager.Instance.HasCharData())
+            {
+                // If a save profile exists, open the select character panel
+                selectCharPanel.SetActive(true);
+                newCharPanel.SetActive(false);
+            }
+            else
+            {
+                // If no save profile exists, open the new character panel
+                newCharPanel.SetActive(true);
+                selectCharPanel.SetActive(false);
+            }            
+        //this.DeactivateMenu();
     }
 
     public void ActivateNameEntry()
@@ -63,32 +100,85 @@ public class MainMenu : MonoBehaviour
         NameInputField.Select();
         NameInputField.ActivateInputField();      
     }
+
     private void EnableCheckButton()
     {
-        checkButton.gameObject.SetActive(NameInputField.text.Length > 0);
+        string inputName = NameInputField.text;
+        bool isNameUnique = SaveManager.Instance.IsProfileNameUnique(inputName);
+
+        // Enable the check button if there's text and it's a unique name
+        checkButton.gameObject.SetActive(inputName.Length > 0 && isNameUnique);
+
+        // Optionally, provide immediate feedback if the name is not unique
+        if (inputName.Length > 0 && !isNameUnique)
+        {
+            // Update UI to show that the name is not unique
+            // e.g., a warning text, change the color of the input field, etc.
+        }
 
     }
     public void CreateCharacter()
     {
-        Debug.Log("CreateCharacter Called.");
-
+        saveSlotsMenu.CreateSaveSlot();
         string newCharacterName = NameInputField.text;
+
+        // Generate a new profile ID for this character
+        string newProfileId = newCharacterName;
+
+        // NewCharacter now returns the new profile ID
         SaveManager.Instance.NewCharacter(newCharacterName);
         SaveManager.Instance.RequestSave();
 
+        // Update the main menu with the selected profile ID
+        SetSelectedProfileId(newProfileId);
+
+        // Deactivate the creation options and show the select character options
         characterCreationOptions.gameObject.SetActive(false);
         selectCharacterOptions.gameObject.SetActive(true);
-        playButton.interactable = true;
 
+        // Update the save slots to include the new character
+        //saveSlotsMenu.UpdateSaveSlots();
+    }
 
-
+    public void SetSelectedProfileId(string id)
+    {
+        selectedProfileId = id;
     }
 
     public void SelectCharacterAndReturnToMenu()
     {
+
+        // Load the selected character data
+        if (!string.IsNullOrEmpty(this.selectedProfileId))
+        {
+            saveSlotsMenu.ActivateMenu();
+            SaveManager.Instance.LoadCharacterData(this.selectedProfileId);
+            UpdateCharacterNameOnUI();
+        }
+
         characterCreationPanel.gameObject.SetActive(false);
         mainMenuPanel.gameObject.SetActive(true);
+
         characterNameText.text = SaveManager.Instance.GetCurrentCharacterName();
+        UpdateCharacterNameOnUI();
+
+        playButton.interactable = true;
+
+
+    }
+
+    public void SwitchCharacter()
+    {
+        if (newCharPanel.activeSelf)
+        {
+            selectCharPanel.SetActive(true);
+            newCharPanel.SetActive(false);
+        }
+        else
+        {
+            newCharPanel.SetActive(true);
+            selectCharPanel.SetActive(false);
+        }
     }
 
     private void UpdateCharacterNameOnUI()
@@ -103,6 +193,8 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+
 
     #endregion
 

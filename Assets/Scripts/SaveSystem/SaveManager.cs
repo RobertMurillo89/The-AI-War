@@ -28,7 +28,7 @@ public class SaveManager : MonoBehaviour
     private float lastSaveTime = -Mathf.Infinity;
     private List<ISaver> thingsToSave;
 
-    private string selectedProfileId = "test";
+    private string selectedProfileId = "";
 
     #region Singleton
     private void Awake()
@@ -64,7 +64,7 @@ public class SaveManager : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         this.thingsToSave = FindAllItemsToSave();
-        LoadCharacterData();
+        LoadCharacterData(selectedProfileId);
     }
 
     public void OnSceneUnloaded(Scene scene)
@@ -102,7 +102,7 @@ public class SaveManager : MonoBehaviour
         serializer.Save(curCharData, selectedProfileId);
     }
 
-    public void LoadCharacterData()
+    public void LoadCharacterData(string profileID)
     {
 
         this.curCharData = serializer.Load(selectedProfileId);
@@ -136,11 +136,16 @@ public class SaveManager : MonoBehaviour
 
     public void NewCharacter(string name)
     {
+        // Assuming curCharData is a field of type CharacterData
         this.curCharData = new CharacterData
         {
             Name = name,
+            ProfileId = name,
             Items = new List<WeaponStats>()
         };
+
+        // Save the new character data under the new profile ID
+        SaveDataAsync();
 
     }
 
@@ -156,8 +161,19 @@ public class SaveManager : MonoBehaviour
         }
     }
 
+    public bool IsProfileNameUnique(string profileName)
+    {
+        var allProfiles = GetAllProfileGameData();
+        return !allProfiles.ContainsKey(profileName);
+    }
+
     public bool HasCharData()
     {
         return curCharData != null;
+    }
+
+    public Dictionary<string, CharacterData> GetAllProfileGameData()
+    {
+        return serializer.LoadAllProfiles();
     }
 }

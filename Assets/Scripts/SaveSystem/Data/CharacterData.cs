@@ -11,6 +11,7 @@ public class CharacterData
 {
     public List<WeaponStats> Items;
     public string Name;
+    public string ProfileId;
 
     public CharacterData()
     {
