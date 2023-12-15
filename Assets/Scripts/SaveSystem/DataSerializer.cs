@@ -78,26 +78,43 @@ public class DataSerializer
         try
         {
             // Ensure that the directory exists where the data file will be saved
-            Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
-
-            // Serialize the CharacterData object to a JSON string
-            string dataToStore = JsonUtility.ToJson(data, true);
-
-            // If encryption is enabled, encrypt the data
-            if (useEncryption)
+            var directoryPath = Path.GetDirectoryName(fullPath);
+            if (!Directory.Exists(directoryPath))
             {
-                dataToStore = EncryptDecrypt(dataToStore);
+                Directory.CreateDirectory(directoryPath);
+            }
+            // Check if file exists and is not being used
+            if (!IsFileInUse(fullPath))
+            {
+                // Serialize the CharacterData object to a JSON string
+                string dataToStore = JsonUtility.ToJson(data, true);
+
+                // If encryption is enabled, encrypt the data
+                if (useEncryption)
+                {
+                    dataToStore = EncryptDecrypt(dataToStore);
+                }
+                // Locking mechanism to handle concurrent access
+                lock (this)
+                {
+                    // Open a file stream for writing the data file
+                    using (FileStream stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        // Create a stream writer to write the data to the file
+
+                        using (StreamWriter writer = new StreamWriter(stream))
+                        {
+                            // Write the (possibly encrypted) data to the file
+                            writer.Write(dataToStore);
+                        }
+                    }
+                }
             }
 
-            // Open a file stream for writing the data file
-            using (FileStream stream = new FileStream(fullPath, FileMode.Create))
+            else
             {
-                // Create a stream writer to write the data to the file
-                using (StreamWriter writer = new StreamWriter(stream))
-                {
-                    // Write the (possibly encrypted) data to the file
-                    writer.Write(dataToStore);
-                }
+                // If the file is in use, log a warning
+                Debug.LogWarning("File is in use: " + fullPath);
             }
         }
         catch (Exception e)
@@ -105,6 +122,23 @@ public class DataSerializer
             // Log any errors that occurred during the save process
             Debug.LogError("Error occured when trying to save data to File: " + fullPath + "\n" + e);
         }
+    }
+
+    private bool IsFileInUse(string filePath)
+    {
+        try
+        {
+            using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+            {
+                stream.Close();
+            }
+        }
+        catch (IOException)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     // Simple XOR encryption/decryption to obfuscate the data

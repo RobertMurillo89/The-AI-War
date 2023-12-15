@@ -15,6 +15,16 @@ public class SaveSlotsMenu : MonoBehaviour
 
     private void Start()
     {
+        // Get all save profiles from SaveManager
+        Dictionary<string, CharacterData> saveProfiles = SaveManager.Instance.GetAllProfileGameData();
+
+        // Create a save slot for each save profile
+        // Create a save slot for each save profile
+    foreach (KeyValuePair<string, CharacterData> profile in saveProfiles)
+        {
+            CreateSaveSlot(profile.Key);
+        }
+
         ActivateMenu();
     }
 
@@ -39,11 +49,13 @@ public class SaveSlotsMenu : MonoBehaviour
             saveSlot.SetData(profileData);
         }
     }
-    public void CreateSaveSlot()
+    public void CreateSaveSlot(string profileId)
     {
         // Instantiate a new save slot from the prefab
         GameObject newSlot = Instantiate(saveSlotPrefab, saveSlotContainer);
         // Assign a unique profile ID to the new save slot
         SaveSlot saveSlotScript = newSlot.GetComponent<SaveSlot>();
+        saveSlotScript.SetProfileId(profileId); // Assign the profile ID
+        saveSlots = this.GetComponentsInChildren<SaveSlot>(); // Update the saveSlots array
     }
 }
