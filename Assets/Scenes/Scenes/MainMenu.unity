@@ -6081,22 +6081,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7004e6e1a67771342af1c49b495b7544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveSlotsMenu: {fileID: 960808668}
-  createCharacterButton: {fileID: 1084289961}
-  NameInputField: {fileID: 13276258}
-  checkButton: {fileID: 753402404}
-  selectCharacterOptions: {fileID: 203021629}
-  characterCreationPanel: {fileID: 1089272073}
   mainMenuPanel: {fileID: 898666357}
+  characterCreationPanel: {fileID: 1089272073}
+  selectCharPanel: {fileID: 203021629}
+  newCharPanel: {fileID: 1054353566}
+  characterCreationOptions: {fileID: 1054353566}
+  selectCharacterOptions: {fileID: 203021629}
+  saveSlotsMenu: {fileID: 960808668}
+  NameInputField: {fileID: 13276258}
+  characterNameText: {fileID: 293815050}
   characterData:
     Items: []
     Name: 
     ProfileId: 
-  characterNameText: {fileID: 293815050}
-  characterCreationOptions: {fileID: 1054353566}
   playButton: {fileID: 2013316352}
-  newCharPanel: {fileID: 1054353566}
-  selectCharPanel: {fileID: 203021629}
+  createCharacterButton: {fileID: 1084289961}
+  checkButton: {fileID: 753402404}
+  selectedProfileId: 
 --- !u!82 &1238423711 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 8257322715224373625, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
@@ -8101,7 +8102,7 @@ MonoBehaviour:
         m_MethodName: PlayButtonSound
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 8300000, guid: b05298f027db6f645a0a91a3de37bb73, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
