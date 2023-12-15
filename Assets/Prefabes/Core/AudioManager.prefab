@@ -179,6 +179,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e17cba3626270a43988d6fe3d3e1fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioMixer: {fileID: 24100000, guid: 9df2dfbae2b7d8b408afea84ad71c8b0, type: 2}
+  MusicSource: {fileID: 8468216572928155080}
+  AmbianceSource: {fileID: 6989974845360098620}
+  SFXSource: {fileID: 8257322715224373625}
+  MasterSlider: {fileID: 0}
+  MusicSlider: {fileID: 0}
+  AmbiSlider: {fileID: 0}
+  SFXSlider: {fileID: 0}
+  MainMenuMusic:
+  - {fileID: 8300000, guid: e0129ea9a3ff03e43986f9f4ffc2827f, type: 3}
+  MainMenuAmbi: []
 --- !u!1 &6076236288779121678
 GameObject:
   m_ObjectHideFlags: 0

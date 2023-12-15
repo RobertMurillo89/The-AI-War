@@ -2085,11 +2085,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!82 &421034593 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8468216572928155080, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
-  m_PrefabInstance: {fileID: 7798739364108598348}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &423355822
 GameObject:
   m_ObjectHideFlags: 0
@@ -6098,11 +6093,6 @@ MonoBehaviour:
   createCharacterButton: {fileID: 1084289961}
   checkButton: {fileID: 753402404}
   selectedProfileId: 
---- !u!82 &1238423711 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8257322715224373625, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
-  m_PrefabInstance: {fileID: 7798739364108598348}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1251126907
 GameObject:
   m_ObjectHideFlags: 0
@@ -7749,11 +7739,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1202012932}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1721941170 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6989974845360098620, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
-  m_PrefabInstance: {fileID: 7798739364108598348}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1749057362
 GameObject:
   m_ObjectHideFlags: 0
@@ -9641,41 +9626,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1362565163}
     - target: {fileID: 358080491781189528, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
-      propertyPath: SFXSource
-      value: 
-      objectReference: {fileID: 1238423711}
-    - target: {fileID: 358080491781189528, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
       propertyPath: AmbiSlider
       value: 
       objectReference: {fileID: 1362565163}
-    - target: {fileID: 358080491781189528, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
-      propertyPath: AudioMixer
-      value: 
-      objectReference: {fileID: 24100000, guid: 9df2dfbae2b7d8b408afea84ad71c8b0, type: 2}
     - target: {fileID: 358080491781189528, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
       propertyPath: MusicSlider
       value: 
       objectReference: {fileID: 1264918537}
     - target: {fileID: 358080491781189528, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
-      propertyPath: MusicSource
-      value: 
-      objectReference: {fileID: 421034593}
-    - target: {fileID: 358080491781189528, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
       propertyPath: MasterSlider
       value: 
       objectReference: {fileID: 786375993}
-    - target: {fileID: 358080491781189528, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
-      propertyPath: AmbianceSource
-      value: 
-      objectReference: {fileID: 1721941170}
-    - target: {fileID: 358080491781189528, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
-      propertyPath: MainMenuMusic.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 358080491781189528, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
-      propertyPath: MainMenuMusic.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: e0129ea9a3ff03e43986f9f4ffc2827f, type: 3}
     - target: {fileID: 4926294058226395872, guid: 012c71ed0242b534791e693e42c7f21f, type: 3}
       propertyPath: m_Name
       value: AudioManager

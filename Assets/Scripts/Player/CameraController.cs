@@ -9,9 +9,9 @@ public class CameraController : MonoBehaviour
     public float Damping;
 
     [Header("----- ZoomComponents -----")]
-    public float zoomSpeed = 1f;
-    public float minOrthographicSize = 5f;
-    public float maxOrthographicSize = 20f;
+    public float zoomSpeed;
+    public float minOrthographicSize;
+    public float maxOrthographicSize;
 
 
     private Vector3 velocity = Vector3.zero;
