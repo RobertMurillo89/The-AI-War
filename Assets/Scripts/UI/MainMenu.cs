@@ -89,17 +89,16 @@ public class MainMenu : MonoBehaviour
 
         checkButton.gameObject.SetActive(inputName.Length > 0 && name != inputName); // Activating the checkButton GameObject if the input name is not empty and different from the current character name
 
-        if (inputName.Length > 0 && name == inputName) // If the input name is not empty and the same as the current character name
-        {
-            // Update UI to show that the name is not unique
-        }
+        //if (inputName.Length > 0 && name == inputName) // If the input name is not empty and the same as the current character name
+        //{
+        //    // Update UI to show that the name is not unique
+        //}
     }
 
     public void CreateCharacter() // Method for creating a character
     {
         string newCharacterName = NameInputField.text; // Getting the text from the NameInputField
         SaveManager.Instance.NewCharacter(newCharacterName); // Creating a new character with the new character name
-        SaveManager.Instance.RequestSave(); // Requesting a save
         saveSlotsMenu.CreateSaveSlot(newCharacterName);
         characterCreationOptions.gameObject.SetActive(false); // Deactivating the characterCreationOptions GameObject
         selectCharacterOptions.gameObject.SetActive(true); // Activating the selectCharacterOptions GameObject
