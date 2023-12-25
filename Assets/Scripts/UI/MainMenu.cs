@@ -46,8 +46,12 @@ public class MainMenu : MonoBehaviour
         }
         else // If there is character data
         {
-            UpdateCharacterNameOnUI(); // Updating the character name on the UI
             saveSlotsMenu.ActivateMenu(); // Creating a new save slot
+
+            // need to load selected character data
+
+            UpdateCharacterNameOnUI(); // Updating the character name on the UI
+
         }
     }
 

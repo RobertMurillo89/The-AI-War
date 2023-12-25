@@ -181,8 +181,10 @@ public class SaveManager : SingletonMonoBehaviour<SaveManager>
             Items = new List<WeaponStats>()
         };
         selectedProfileId = name;
+
         // Save the new character data under the new profile ID
         var _ = SaveDataAsync(); // Asynchronously saving without awaiting
+
     }
 
     // Public method to get the current character's name
