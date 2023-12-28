@@ -4,7 +4,9 @@ public class AI_Chess : EnemyAI
 {
 
     [Header("Player Reference")]
-    public Transform player; // Reference to the player's Transform
+    //GameObject player; // Reference to the player
+
+   
 
     [Header("Movement Variables")]
     [SerializeField] int movement; // Movement speed, exposed in the inspector
@@ -28,6 +30,11 @@ public class AI_Chess : EnemyAI
     [SerializeField] byte typeOfMove; // Type of move, exposed in the inspector
     public enum MoveType { Rook = 1, Bishop, Queen } // Types of moves
     private bool randomBool; // Random boolean for decision making
+
+    //private void Start()
+    //{
+    //    player = GameObject.FindGameObjectWithTag("Player"); // find player
+    //}
 
     void Update() // Update method called once per frame
     {
@@ -70,6 +77,7 @@ public class AI_Chess : EnemyAI
                     Direction = SetDirectionQueen(); // Set the direction to the result of the SetDirectionQueen method
                     break; // Break out of the switch statement
             }
+            ticks = moveTicks;
         }
     }
 
@@ -154,6 +162,8 @@ public class AI_Chess : EnemyAI
         }
         return VDirection;
     }
+
+
     Vector3 SetDirectionBishop()
     {
         Vector3 VDirection = Vector3.zero;
@@ -230,6 +240,8 @@ public class AI_Chess : EnemyAI
         }
         return VDirection;
     }
+
+
     Vector3 SetDirectionQueen()
     {
         Vector3 VDirection = Vector3.zero;

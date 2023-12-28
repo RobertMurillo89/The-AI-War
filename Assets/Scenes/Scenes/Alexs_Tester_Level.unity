@@ -19120,7 +19120,7 @@ PrefabInstance:
       objectReference: {fileID: 6441278879230865777, guid: 88113c6e562105d45ba80f551dc47d51, type: 3}
     - target: {fileID: 1879915640650517074, guid: e1837a39874a4e241921b7b91dd98c49, type: 3}
       propertyPath: SpawnDistance
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1879915640650517074, guid: e1837a39874a4e241921b7b91dd98c49, type: 3}
       propertyPath: ItemCounts.Array.data[0]
@@ -19132,7 +19132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1898550646540743892, guid: e1837a39874a4e241921b7b91dd98c49, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2442725454244973210, guid: e1837a39874a4e241921b7b91dd98c49, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29525,16 +29525,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5997553992000060768, guid: 88113c6e562105d45ba80f551dc47d51, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 135475658}
+      propertyPath: Speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997553992000060768, guid: 88113c6e562105d45ba80f551dc47d51, type: 3}
+      propertyPath: ticks
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997553992000060768, guid: 88113c6e562105d45ba80f551dc47d51, type: 3}
+      propertyPath: movement
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6441278879230865777, guid: 88113c6e562105d45ba80f551dc47d51, type: 3}
       propertyPath: m_Name
       value: AI_Queen
-      objectReference: {fileID: 0}
-    - target: {fileID: 6441278879230865777, guid: 88113c6e562105d45ba80f551dc47d51, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

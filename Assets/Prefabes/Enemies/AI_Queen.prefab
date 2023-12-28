@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 7739060383865595899}
   - component: {fileID: 2406764192115508453}
   - component: {fileID: 2830253224912165884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AI_Queen
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,8 +110,7 @@ MonoBehaviour:
   AttackCooldown: 0
   EmoteSource: {fileID: 2406764192115508453}
   WeaponSource: {fileID: 0}
-  sprite: {fileID: 0}
-  player: {fileID: 0}
+  sprite: {fileID: 1322801571007721862}
   movement: 5
   moveTicks: 200
   canIMove: {fileID: 7739060383865595899}
@@ -386,7 +385,7 @@ GameObject:
   - component: {fileID: 1759137760572129671}
   - component: {fileID: 8662039141962000711}
   - component: {fileID: 1342940914537468559}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OtherChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
