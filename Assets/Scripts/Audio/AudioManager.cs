@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using static Unity.VisualScripting.Member;
 
 public class AudioManager : SingletonMonoBehaviour<AudioManager>
 {
@@ -15,6 +16,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     {
         UpdateInitialVolumes();
         PlayMusic(MusicSource, MainMenuMusic);
+        PlayAmbiance(AmbianceSource, MainMenuAmbi);
     }
 
     #region Audio

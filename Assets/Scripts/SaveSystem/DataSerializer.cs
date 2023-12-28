@@ -161,31 +161,15 @@ public class DataSerializer
     public Dictionary<string, CharacterData> LoadAllProfiles()
     {
         // Dictionary to hold the character data for each profile ID
-        Dictionary<string, CharacterData> profileDictionary = new Dictionary<string, CharacterData>();
+        var profileDictionary = new Dictionary<string, CharacterData>();
+        var directories = GetAllProfileDirectories();
 
-        // Get information about all directories in the data directory path
-        IEnumerable<DirectoryInfo> dirInfos = new DirectoryInfo(dataDirPath).EnumerateDirectories();
-        foreach (DirectoryInfo dirInfo in dirInfos)
+        foreach (var dirInfo in directories)
         {
             // Use the directory name as the profile ID
             string profileId = dirInfo.Name;
+            var profileData = LoadProfileData(profileId);
 
-            // Combine directory path, profile ID, and file name to create a full path to the data file
-            string fullPath = Path.Combine(dataDirPath, profileId, dataFileName);
-
-            // Check if the data file exists for this profile
-            if (!File.Exists(fullPath))
-            {
-                // If the file doesn't exist, log a warning and skip this directory
-                Debug.LogWarning("Skipping directory when loading all profiles because it does not contain data: " 
-                    + profileId);
-                continue;
-            }
-
-            // Load the character data for this profile
-            CharacterData profileData = Load(profileId);
-
-            // If data was successfully loaded, add it to the dictionary
             if (profileData != null)
             {
                 profileDictionary.Add(profileId, profileData);
@@ -200,4 +184,28 @@ public class DataSerializer
         return profileDictionary;
     }
 
+    // Get information about all directories in the data directory path
+    private IEnumerable<DirectoryInfo> GetAllProfileDirectories()
+    {
+        return new DirectoryInfo(dataDirPath).EnumerateDirectories();
+    }
+
+    private CharacterData LoadProfileData(string profileId)
+    {
+        // Combine directory path, profile ID, and file name to create a full path to the data file
+        string fullPath = GetProfileDataFilePath(profileId);
+
+        if (!File.Exists(fullPath))
+        {
+            Debug.LogWarning($"Skipping directory when loading all profiles because it does not contain data: {profileId}");
+            return null;
+        }
+
+        return Load(profileId);
+    }
+
+    private string GetProfileDataFilePath(string profileId)
+    {
+        return Path.Combine(dataDirPath, profileId, dataFileName);
+    }
 }

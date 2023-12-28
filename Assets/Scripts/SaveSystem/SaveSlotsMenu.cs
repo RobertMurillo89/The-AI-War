@@ -18,7 +18,6 @@ public class SaveSlotsMenu : MonoBehaviour
         Dictionary<string, CharacterData> saveProfiles = SaveManager.Instance.GetAllProfileGameData();
 
         // Create a save slot for each save profile
-        // Create a save slot for each save profile
     foreach (KeyValuePair<string, CharacterData> profile in saveProfiles)
         {
             CreateSaveSlot(profile.Key);
