@@ -249,9 +249,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.75}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.25
 --- !u!50 &180820942340240124
 Rigidbody2D:
   serializedVersion: 4
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d67bc91245fc44e85dcc6c5032de0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 3
   Health: 10
   Range: 2
   Damage: 5
