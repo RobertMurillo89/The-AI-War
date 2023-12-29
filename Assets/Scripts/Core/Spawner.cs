@@ -6,11 +6,13 @@ public class Spawner : MonoBehaviour
 {
 
     public GameObject ObjectToSpawn; // List of things to spawn
+    public int startDelay; // for starting anether wave on top of the other ////
     public float SpawnDelay; // Time interval between spawns
+    public float nextSpawnRateMutiplierSubtacter; // how much faster the next round spawns enemeis 
     public float SpawnDistance; // Distance from the player to spawn item
     public float WaveDelay; // delay between waves. 
     public int[] ItemCounts; // list of interval amounts of items to spawn
-
+    bool cantLowerMore;
 
 
     private int currentInterval = 0;
@@ -29,6 +31,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpawnItems()
     {
+        yield return new WaitForSeconds(SpawnDelay); // new delay for stonger spawner ////
         while (currentInterval < ItemCounts.Length)
         {
             for (int i = 0; i < ItemCounts[currentInterval]; i++)
@@ -38,6 +41,15 @@ public class Spawner : MonoBehaviour
             }
 
             currentInterval++;
+            if (!cantLowerMore)
+            {
+                SpawnDelay -= nextSpawnRateMutiplierSubtacter * ItemCounts.Length;// it should make faster by round by round ////
+                if (SpawnDelay < 0)
+                {
+                    SpawnDelay = 0.05f;
+                    cantLowerMore = true;
+                }
+            }
             yield return new WaitForSeconds(WaveDelay);
         }
         GameManager.Instance.NotifySpawnerCompleted(this);
